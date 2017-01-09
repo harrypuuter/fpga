@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, /home/sebi/studium/elektronik/d3/orgate2/orgate2.vhd
+source_file = 1, /home/sebi/studium/elektronik/d3/orgate2/orgate.vhd
+source_file = 1, /home/sebi/studium/elektronik/d3/orgate2/db/orgate2.cbx.xml
+source_file = 1, /home/sebi/tools/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /home/sebi/tools/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /home/sebi/tools/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /home/sebi/tools/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = orgate2
+instance = comp, \key[0]~I\, key[0], orgate2, 1
+instance = comp, \key[1]~I\, key[1], orgate2, 1
+instance = comp, \key[2]~I\, key[2], orgate2, 1
+instance = comp, \c1|ledr~0\, c1|ledr~0, orgate2, 1
+instance = comp, \ledr~I\, ledr, orgate2, 1
