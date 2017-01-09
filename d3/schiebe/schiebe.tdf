@@ -1,22 +1,35 @@
 SUBDESIGN schiebe
 (
-A[1..0] :INPUT;
-SERIN   :INPUT;
-IX[7..0] :INPUT;
-CLOCK   :INPUT;
-SEROUT  :OUTPUT;
+MODE[1..0] 	:INPUT;
+SERIN   		:INPUT;
+IX[7..0] 	:INPUT;
+CLOCK   		:INPUT;
+q[7..0] 		:OUTPUT;
+
 )
 
 VARIABLE
-speicher0:DFF;
-speicher7:DFF;
-speicher[6..1]:DFF;
+--speicher0:DFF;
+--speicher7:DFF;
+speicher[7..0]:DFF;
 
 
 BEGIN
-IF A[1..0]==0
-	speicher0[].d=GND;
-IF A[1..0]==1
-	speicher0.d=IX[0];
+	speicher[].clk =clock;
+	--speicher0.clk=clock;
+	--speicher7.clk=clock;
+
+	CASE mode[] IS
+		WHEN 0 => speicher[].d = speicher[].q;
+		WHEN 1 => speicher[6..0].d = speicher[7..1].q;
+		speicher[7].d=serin;
+		WHEN 2 => speicher[7..1].d = speicher[6..0].q;
+		speicher[0].d=serin;
+		WHEN 3 => speicher[].d =IX[];
+	
+	
+	END CASE;
+	q[]=speicher[];
+	
 	
 END;
