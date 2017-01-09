@@ -1,0 +1,22 @@
+SUBDESIGN schiebe
+(
+A[1..0] :INPUT;
+SERIN   :INPUT;
+IX[7..0] :INPUT;
+CLOCK   :INPUT;
+SEROUT  :OUTPUT;
+)
+
+VARIABLE
+speicher0:DFF;
+speicher7:DFF;
+speicher[6..1]:DFF;
+
+
+BEGIN
+IF A[1..0]==0
+	speicher0[].d=GND;
+IF A[1..0]==1
+	speicher0.d=IX[0];
+	
+END;
