@@ -1,5 +1,5 @@
 EDA Netlist Writer report for teiler
-Tue Jan 10 17:46:50 2017
+Tue Jan 10 19:42:36 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jan 10 17:46:50 2017 ;
+; EDA Netlist Writer Status ; Successful - Tue Jan 10 19:42:36 2017 ;
 ; Revision Name             ; teiler                                ;
 ; Top-level Entity Name     ; teiler                                ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -50,7 +50,8 @@ applicable agreement for further details.
 ; Option                                                                                            ; Setting                   ;
 +---------------------------------------------------------------------------------------------------+---------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate netlist for functional simulation only                                                   ; On                        ;
+; Generate netlist for functional simulation only                                                   ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
 ; Truncate long hierarchy paths                                                                     ; Off                       ;
 ; Map illegal HDL characters                                                                        ; Off                       ;
 ; Flatten buses into individual nodes                                                               ; Off                       ;
@@ -65,13 +66,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                           ;
-+--------------------------------------------------------------------------------------+
-; Generated Files                                                                      ;
-+--------------------------------------------------------------------------------------+
-; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler.vo ;
-+--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                 ;
++------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                            ;
++------------------------------------------------------------------------------------------------------------+
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_6_1200mv_85c_slow.vo     ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_6_1200mv_0c_slow.vo      ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_min_1200mv_0c_fast.vo    ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler.vo                       ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_6_1200mv_85c_v_slow.sdo  ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_6_1200mv_0c_v_slow.sdo   ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_min_1200mv_0c_v_fast.sdo ;
+; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/teiler_v.sdo                    ;
++------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,12 +88,19 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jan 10 17:46:49 2017
-Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog teiler -c teiler
+    Info: Processing started: Tue Jan 10 19:42:35 2017
+Info: Command: quartus_eda --functional=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog teiler -c teiler
+Info (204019): Generated file teiler_6_1200mv_85c_slow.vo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file teiler_6_1200mv_0c_slow.vo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file teiler_min_1200mv_0c_fast.vo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file teiler.vo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file teiler_6_1200mv_85c_v_slow.sdo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file teiler_6_1200mv_0c_v_slow.sdo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file teiler_min_1200mv_0c_v_fast.sdo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file teiler_v.sdo in folder "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 458 megabytes
-    Info: Processing ended: Tue Jan 10 17:46:50 2017
+    Info: Processing ended: Tue Jan 10 19:42:36 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

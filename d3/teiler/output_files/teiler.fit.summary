@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Jan 10 17:45:28 2017
+Fitter Status : Successful - Tue Jan 10 19:42:07 2017
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : teiler
 Top-level Entity Name : teiler
 Family : Cyclone IV GX
 Device : EP4CGX15BF14C6
 Timing Models : Final
-Total logic elements : 0 / 14,400 ( 0 % )
-    Total combinational functions : 0 / 14,400 ( 0 % )
-    Dedicated logic registers : 0 / 14,400 ( 0 % )
-Total registers : 0
+Total logic elements : 11 / 14,400 ( < 1 % )
+    Total combinational functions : 9 / 14,400 ( < 1 % )
+    Dedicated logic registers : 7 / 14,400 ( < 1 % )
+Total registers : 7
 Total pins : 2 / 81 ( 2 % )
 Total virtual pins : 0
 Total memory bits : 0 / 552,960 ( 0 % )

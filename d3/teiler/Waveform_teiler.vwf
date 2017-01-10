@@ -59,9 +59,9 @@ TRANSITION_LIST("clock")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 5000;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 500;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
 		}
 	}
 }
@@ -71,8 +71,8 @@ TRANSITION_LIST("out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL X FOR 639.0;
+		LEVEL 0 FOR 99361.0;
 	}
 }
 

@@ -4,24 +4,37 @@ SUBDESIGN teiler
 (
 CLOCK   		:INPUT;
 out 			:OUTPUT;
-
 )
 
 VARIABLE
 counter64	:lpm_counter WITH (LPM_WIDTH=6);
-counter12	:lpm_counter WITH (LPM_WIDTH=12, LPM_SVALUE=3906);
+counter12	:lpm_counter WITH (LPM_WIDTH=12, LPM_SVALUE=3906, LPM_DIRECTION=DOWN);
 flipflop		:TFF;
 
 
 BEGIN
 	counter64.clock=clock;
-	counter12.clock=GND;
-	IF counter64.cout==1 THEN
-	counter12.clock=VCC;
-	counter12.sset=VCC;
+	counter12.clock=counter64.cout;
 	flipflop.t=VCC;
-	out=flipflop.q;
+	--flipflop.clk=GND;
+	
+	IF counter64.q==0 THEN
+		--counter12.sset=VCC;
+		flipflop.clk=VCC;
+		--out=flipflop.q;
+		--out=VCC;
+		counter12.data[]=3906;
+		
+	ELSE 
+		--out=GND;
+		flipflop.clk=GND;
+		--counter12.sset=GND;
+	
 	END IF;
+	out=flipflop.q;
+	
+
+
 	
 	
 	

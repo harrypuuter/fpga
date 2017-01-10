@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "01/10/2017 17:46:49"
+// Generated on "01/10/2017 19:42:35"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    teiler
 // 
@@ -105,7 +105,7 @@ end
 initial
 begin
 	out_expected = 1'bX;
-	out_expected = #999000 1'b0;
+	out_expected = #639000 1'b0;
 end 
 // generate trigger
 always @(out_expected or out)
@@ -170,8 +170,8 @@ teiler i1 (
 always
 begin
 	clock = 1'b0;
-	clock = #10000 1'b1;
-	#10000;
+	clock = #100000 1'b1;
+	#100000;
 end 
 
 teiler_vlg_sample_tst tb_sample (

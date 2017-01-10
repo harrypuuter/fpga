@@ -1,5 +1,5 @@
 Analysis & Synthesis report for teiler
-Tue Jan 10 17:45:21 2017
+Tue Jan 10 19:42:02 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,12 +14,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: lpm_counter:counter64
- 12. Parameter Settings for User Entity Instance: lpm_counter:counter12
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: lpm_counter:counter64
+ 11. Parameter Settings for User Entity Instance: lpm_counter:counter12
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +44,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jan 10 17:45:21 2017           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 10 19:42:02 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; teiler                                          ;
 ; Top-level Entity Name              ; teiler                                          ;
 ; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
+; Total logic elements               ; 9                                               ;
+;     Total combinational functions  ; 9                                               ;
+;     Dedicated logic registers      ; 7                                               ;
+; Total registers                    ; 7                                               ;
 ; Total pins                         ; 2                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -179,8 +178,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; dffeea.inc                       ; yes             ; Megafunction                 ; f:/programme/altera/13.0sp1/quartus/libraries/megafunctions/dffeea.inc              ;         ;
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; f:/programme/altera/13.0sp1/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
 ; aglobal130.inc                   ; yes             ; Megafunction                 ; f:/programme/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
-; db/cntr_1gg.tdf                  ; yes             ; Auto-Generated Megafunction  ; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/db/cntr_1gg.tdf              ;         ;
-; db/cntr_psh.tdf                  ; yes             ; Auto-Generated Megafunction  ; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/db/cntr_psh.tdf              ;         ;
+; db/cntr_ikg.tdf                  ; yes             ; Auto-Generated Megafunction  ; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/db/cntr_ikg.tdf              ;         ;
+; db/cntr_mpj.tdf                  ; yes             ; Auto-Generated Megafunction  ; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler/db/cntr_mpj.tdf              ;         ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 
 
@@ -191,44 +190,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+------------------+
 ; I/O pins                 ; 2                ;
 ; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; clock            ;
-; Maximum fan-out          ; 1                ;
-; Total fan-out            ; 2                ;
-; Average fan-out          ; 0.50             ;
+; Maximum fan-out node     ; clock~input      ;
+; Maximum fan-out          ; 6                ;
+; Total fan-out            ; 36               ;
+; Average fan-out          ; 1.80             ;
 +--------------------------+------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |teiler                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |teiler             ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; |teiler                         ; 9 (3)             ; 7 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |teiler                                               ; work         ;
+;    |lpm_counter:counter64|      ; 6 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |teiler|lpm_counter:counter64                         ; work         ;
+;       |cntr_ikg:auto_generated| ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |teiler|lpm_counter:counter64|cntr_ikg:auto_generated ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                          ;
-+----------------------------------------------------------------------+--------------------------------------+
-; Register name                                                        ; Reason for Removal                   ;
-+----------------------------------------------------------------------+--------------------------------------+
-; flipflop                                                             ; Stuck at GND due to stuck port clock ;
-; lpm_counter:counter12|cntr_psh:auto_generated|counter_reg_bit[0..11] ; Lost fanout                          ;
-; lpm_counter:counter64|cntr_1gg:auto_generated|counter_reg_bit[0..5]  ; Lost fanout                          ;
-; Total Number of Removed Registers = 19                               ;                                      ;
-+----------------------------------------------------------------------+--------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                     ;
-+-------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------+
-; Register name                                                     ; Reason for Removal      ; Registers Removed due to This Register                            ;
-+-------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------+
-; flipflop                                                          ; Stuck at GND            ; lpm_counter:counter64|cntr_1gg:auto_generated|counter_reg_bit[5], ;
-;                                                                   ; due to stuck port clock ; lpm_counter:counter64|cntr_1gg:auto_generated|counter_reg_bit[4]  ;
-; lpm_counter:counter12|cntr_psh:auto_generated|counter_reg_bit[11] ; Lost Fanouts            ; lpm_counter:counter64|cntr_1gg:auto_generated|counter_reg_bit[3]  ;
-+-------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++----------------------------------------------------------------------+--------------------+
+; Register name                                                        ; Reason for Removal ;
++----------------------------------------------------------------------+--------------------+
+; lpm_counter:counter12|cntr_mpj:auto_generated|counter_reg_bit[0..11] ; Lost fanout        ;
+; Total Number of Removed Registers = 12                               ;                    ;
++----------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -236,7 +224,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 7     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -268,7 +256,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CARRY_CNT_EN           ; SMART             ; Untyped               ;
 ; LABWIDE_SCLR           ; ON                ; Untyped               ;
 ; USE_NEW_VERSION        ; TRUE              ; Untyped               ;
-; CBXI_PARAMETER         ; cntr_1gg          ; Untyped               ;
+; CBXI_PARAMETER         ; cntr_ikg          ; Untyped               ;
 +------------------------+-------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -283,7 +271,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE          ;
 ; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE        ;
 ; LPM_WIDTH              ; 12                ; Untyped               ;
-; LPM_DIRECTION          ; DEFAULT           ; Untyped               ;
+; LPM_DIRECTION          ; DOWN              ; Untyped               ;
 ; LPM_MODULUS            ; 0                 ; Untyped               ;
 ; LPM_AVALUE             ; UNUSED            ; Untyped               ;
 ; LPM_SVALUE             ; 3906              ; Untyped               ;
@@ -295,7 +283,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CARRY_CNT_EN           ; SMART             ; Untyped               ;
 ; LABWIDE_SCLR           ; ON                ; Untyped               ;
 ; USE_NEW_VERSION        ; TRUE              ; Untyped               ;
-; CBXI_PARAMETER         ; cntr_psh          ; Untyped               ;
+; CBXI_PARAMETER         ; cntr_mpj          ; Untyped               ;
 +------------------------+-------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -315,9 +303,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jan 10 17:45:19 2017
+    Info: Processing started: Tue Jan 10 19:42:00 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off teiler -c teiler
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (287006): Constant or parameter "DOWN" is used but not defined -- interpreted constant or parameter as quoted string
+Warning (287004): Group name "q" is missing brackets ([ ])
 Info (12021): Found 1 design units, including 1 entities, in source file teiler.tdf
     Info (12023): Found entity 1: teiler
 Info (12127): Elaborating entity "teiler" for the top level hierarchy
@@ -325,30 +315,30 @@ Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter:counte
 Info (12130): Elaborated megafunction instantiation "lpm_counter:counter64"
 Info (12133): Instantiated megafunction "lpm_counter:counter64" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_1gg.tdf
-    Info (12023): Found entity 1: cntr_1gg
-Info (12128): Elaborating entity "cntr_1gg" for hierarchy "lpm_counter:counter64|cntr_1gg:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ikg.tdf
+    Info (12023): Found entity 1: cntr_ikg
+Info (12128): Elaborating entity "cntr_ikg" for hierarchy "lpm_counter:counter64|cntr_ikg:auto_generated"
 Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter:counter12"
+Warning (287001): Assertion warning: The data[] port is connected but aload and sload are not connected or are ground. This means the data will be ignored
 Info (12130): Elaborated megafunction instantiation "lpm_counter:counter12"
 Info (12133): Instantiated megafunction "lpm_counter:counter12" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "12"
+    Info (12134): Parameter "LPM_DIRECTION" = "DOWN"
     Info (12134): Parameter "LPM_SVALUE" = "3906"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_psh.tdf
-    Info (12023): Found entity 1: cntr_psh
-Info (12128): Elaborating entity "cntr_psh" for hierarchy "lpm_counter:counter12|cntr_psh:auto_generated"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out" is stuck at GND
-Info (17049): 18 registers lost all their fanouts during netlist optimizations.
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_mpj.tdf
+    Info (12023): Found entity 1: cntr_mpj
+Info (12128): Elaborating entity "cntr_mpj" for hierarchy "lpm_counter:counter12|cntr_mpj:auto_generated"
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 12 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock"
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 1 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info (21061): Implemented 9 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 538 megabytes
-    Info: Processing ended: Tue Jan 10 17:45:21 2017
+    Info: Processing ended: Tue Jan 10 19:42:02 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
