@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="teiler">
+		<CBX_INST_ENTRY INSTANCE_NAME="|teiler|lpm_counter:counter12" CBX_FILE_NAME="cntr_psh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|teiler|lpm_counter:counter64" CBX_FILE_NAME="cntr_1gg.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

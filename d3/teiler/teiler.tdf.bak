@@ -1,0 +1,19 @@
+INCLUDE "lpm_counter.inc";
+
+SUBDESIGN teiler
+(
+CLOCK   		:INPUT;
+out 		:OUTPUT;
+
+)
+
+VARIABLE
+counter64	:lpm_counter WITH (LPM_WIDTH=6);
+
+
+BEGIN
+	
+	=speicher[];
+	
+	
+END;
