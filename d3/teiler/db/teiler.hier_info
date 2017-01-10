@@ -1,10 +1,10 @@
 |teiler
-clock => lpm_counter:counter64.clock
+clock => lpm_counter:counter6.clock
 out <= flipflop.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|teiler|lpm_counter:counter64
-clock => cntr_ikg:auto_generated.clock
+|teiler|lpm_counter:counter6
+clock => cntr_l7g:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
@@ -23,13 +23,13 @@ data[3] => ~NO_FANOUT~
 data[4] => ~NO_FANOUT~
 data[5] => ~NO_FANOUT~
 cin => ~NO_FANOUT~
-q[0] <= cntr_ikg:auto_generated.q[0]
-q[1] <= cntr_ikg:auto_generated.q[1]
-q[2] <= cntr_ikg:auto_generated.q[2]
-q[3] <= cntr_ikg:auto_generated.q[3]
-q[4] <= cntr_ikg:auto_generated.q[4]
-q[5] <= cntr_ikg:auto_generated.q[5]
-cout <= cntr_ikg:auto_generated.cout
+q[0] <= <GND>
+q[1] <= <GND>
+q[2] <= <GND>
+q[3] <= <GND>
+q[4] <= <GND>
+q[5] <= <GND>
+cout <= cntr_l7g:auto_generated.cout
 eq[0] <= <GND>
 eq[1] <= <GND>
 eq[2] <= <GND>
@@ -48,24 +48,18 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|teiler|lpm_counter:counter64|cntr_ikg:auto_generated
-clock => counter_reg_bit[5].CLK
-clock => counter_reg_bit[4].CLK
-clock => counter_reg_bit[3].CLK
-clock => counter_reg_bit[2].CLK
-clock => counter_reg_bit[1].CLK
-clock => counter_reg_bit[0].CLK
+|teiler|lpm_counter:counter6|cntr_l7g:auto_generated
+clock => counter_reg_bit1a[5].CLK
+clock => counter_reg_bit1a[4].CLK
+clock => counter_reg_bit1a[3].CLK
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
 cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
-q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |teiler|lpm_counter:counter12
-clock => cntr_mpj:auto_generated.clock
+clock => cntr_rlj:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
@@ -77,31 +71,31 @@ sclr => ~NO_FANOUT~
 sset => ~NO_FANOUT~
 sconst => ~NO_FANOUT~
 sload => ~NO_FANOUT~
-data[0] => cntr_mpj:auto_generated.data[0]
-data[1] => cntr_mpj:auto_generated.data[1]
-data[2] => cntr_mpj:auto_generated.data[2]
-data[3] => cntr_mpj:auto_generated.data[3]
-data[4] => cntr_mpj:auto_generated.data[4]
-data[5] => cntr_mpj:auto_generated.data[5]
-data[6] => cntr_mpj:auto_generated.data[6]
-data[7] => cntr_mpj:auto_generated.data[7]
-data[8] => cntr_mpj:auto_generated.data[8]
-data[9] => cntr_mpj:auto_generated.data[9]
-data[10] => cntr_mpj:auto_generated.data[10]
-data[11] => cntr_mpj:auto_generated.data[11]
+data[0] => cntr_rlj:auto_generated.data[0]
+data[1] => cntr_rlj:auto_generated.data[1]
+data[2] => cntr_rlj:auto_generated.data[2]
+data[3] => cntr_rlj:auto_generated.data[3]
+data[4] => cntr_rlj:auto_generated.data[4]
+data[5] => cntr_rlj:auto_generated.data[5]
+data[6] => cntr_rlj:auto_generated.data[6]
+data[7] => cntr_rlj:auto_generated.data[7]
+data[8] => cntr_rlj:auto_generated.data[8]
+data[9] => cntr_rlj:auto_generated.data[9]
+data[10] => cntr_rlj:auto_generated.data[10]
+data[11] => cntr_rlj:auto_generated.data[11]
 cin => ~NO_FANOUT~
-q[0] <= <GND>
-q[1] <= <GND>
-q[2] <= <GND>
-q[3] <= <GND>
-q[4] <= <GND>
-q[5] <= <GND>
-q[6] <= <GND>
-q[7] <= <GND>
-q[8] <= <GND>
-q[9] <= <GND>
-q[10] <= <GND>
-q[11] <= <GND>
+q[0] <= cntr_rlj:auto_generated.q[0]
+q[1] <= cntr_rlj:auto_generated.q[1]
+q[2] <= cntr_rlj:auto_generated.q[2]
+q[3] <= cntr_rlj:auto_generated.q[3]
+q[4] <= cntr_rlj:auto_generated.q[4]
+q[5] <= cntr_rlj:auto_generated.q[5]
+q[6] <= cntr_rlj:auto_generated.q[6]
+q[7] <= cntr_rlj:auto_generated.q[7]
+q[8] <= cntr_rlj:auto_generated.q[8]
+q[9] <= cntr_rlj:auto_generated.q[9]
+q[10] <= cntr_rlj:auto_generated.q[10]
+q[11] <= cntr_rlj:auto_generated.q[11]
 cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
@@ -121,19 +115,19 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|teiler|lpm_counter:counter12|cntr_mpj:auto_generated
-clock => counter_reg_bit[11].CLK
-clock => counter_reg_bit[10].CLK
-clock => counter_reg_bit[9].CLK
-clock => counter_reg_bit[8].CLK
-clock => counter_reg_bit[7].CLK
-clock => counter_reg_bit[6].CLK
-clock => counter_reg_bit[5].CLK
-clock => counter_reg_bit[4].CLK
-clock => counter_reg_bit[3].CLK
-clock => counter_reg_bit[2].CLK
-clock => counter_reg_bit[1].CLK
-clock => counter_reg_bit[0].CLK
+|teiler|lpm_counter:counter12|cntr_rlj:auto_generated
+clock => counter_reg_bit1a[11].CLK
+clock => counter_reg_bit1a[10].CLK
+clock => counter_reg_bit1a[9].CLK
+clock => counter_reg_bit1a[8].CLK
+clock => counter_reg_bit1a[7].CLK
+clock => counter_reg_bit1a[6].CLK
+clock => counter_reg_bit1a[5].CLK
+clock => counter_reg_bit1a[4].CLK
+clock => counter_reg_bit1a[3].CLK
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
 data[0] => _.IN1
 data[1] => _.IN1
 data[2] => _.IN1
@@ -146,5 +140,17 @@ data[8] => _.IN1
 data[9] => _.IN1
 data[10] => _.IN1
 data[11] => _.IN1
+q[0] <= counter_reg_bit1a[0].REGOUT
+q[1] <= counter_reg_bit1a[1].REGOUT
+q[2] <= counter_reg_bit1a[2].REGOUT
+q[3] <= counter_reg_bit1a[3].REGOUT
+q[4] <= counter_reg_bit1a[4].REGOUT
+q[5] <= counter_reg_bit1a[5].REGOUT
+q[6] <= counter_reg_bit1a[6].REGOUT
+q[7] <= counter_reg_bit1a[7].REGOUT
+q[8] <= counter_reg_bit1a[8].REGOUT
+q[9] <= counter_reg_bit1a[9].REGOUT
+q[10] <= counter_reg_bit1a[10].REGOUT
+q[11] <= counter_reg_bit1a[11].REGOUT
 
 
