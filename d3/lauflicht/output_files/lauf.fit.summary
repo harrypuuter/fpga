@@ -1,20 +1,16 @@
-Fitter Status : Successful - Tue Jan 10 21:23:32 2017
+Fitter Status : Successful - Tue Jan 10 22:56:16 2017
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : lauf
 Top-level Entity Name : lauf
-Family : Cyclone IV GX
-Device : EP4CGX15BF14C6
+Family : Cyclone II
+Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 0 / 14,400 ( 0 % )
-    Total combinational functions : 0 / 14,400 ( 0 % )
-    Dedicated logic registers : 0 / 14,400 ( 0 % )
-Total registers : 0
-Total pins : 20 / 81 ( 25 % )
+Total logic elements : 74 / 18,752 ( < 1 % )
+    Total combinational functions : 73 / 18,752 ( < 1 % )
+    Dedicated logic registers : 41 / 18,752 ( < 1 % )
+Total registers : 41
+Total pins : 22 / 315 ( 7 % )
 Total virtual pins : 0
-Total memory bits : 0 / 552,960 ( 0 % )
-Embedded Multiplier 9-bit elements : 0
-Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
-Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
-Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
-Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
-Total PLLs : 0 / 3 ( 0 % )
+Total memory bits : 0 / 239,616 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

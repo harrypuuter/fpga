@@ -1,20 +1,23 @@
 INCLUDE "schiebe";
 INCLUDE "lpm_counter";
+INCLUDE "teiler";
 
 SUBDESIGN lauf
 (
 clock			:INPUT;
-T[1..0]		:INPUT;
+T[3..1]		:INPUT;
 parin[7..0]	:INPUT;
 out[7..0]	:OUTPUT;
+status		:OUTPUT; --1 rechts, 0 links 
 
 mod_serin	:INPUT;
 )
 
 VARIABLE
-	m :   MACHINE OF BITS (q1, q2, q3) WITH STATES ( s1,s2,s3,s4,s5,s6,s7 );
+	m :   MACHINE WITH STATES ( s1,s2,s3,s4,s5,s6,s7 );
 	register: schiebe;
 	warten_counter	:lpm_counter WITH (LPM_WIDTH=7, LPM_DIRECTION=DOWN);
+	taktgeber: teiler;
 
 
 BEGIN
@@ -22,12 +25,18 @@ register.mode[]=0;
 warten_counter.clock=clock;
 out[]=register.q[];
 register.parin[]=parin[];
+
+taktgeber.clock=clock;
+m.clk=taktgeber.out;
+
+
+
 	CASE m IS
 		WHEN s1 =>
-			IF T[0]==0 THEN m=s2; END IF;
+			IF T[1]==0 THEN m=s2; END IF;
 		WHEN s2 =>
 			register.mode[]=1;
-			IF T[1]==1 THEN m=s3; END IF;
+			IF T[2]==1 THEN m=s3; END IF;
 		WHEN s3 =>
 			warten_counter.data[]=64;
 			m=s4;
@@ -35,16 +44,27 @@ register.parin[]=parin[];
 			register.clock=clock;
 			m=s5;
 		WHEN s5 =>
-			IF T[0]==0 THEN m=s7; END IF;
-			IF T[1]==0 & T[0]==1 THEN m=s6; END IF;
-			IF T[0]==1 $ T[1]==1$ warten_counter.q[]==0 THEN m=s3; END IF;	
+			register.mode[]=3;
+			status=VCC;
+			IF T[1]==0 THEN m=s7;
+			ELSIF T[2]==0 & T[1]==1 THEN m=s6; 
+			ELSIF T[1]==1 $ T[2]==1$ warten_counter.q[]==0 THEN m=s3;
+			END IF;	
 		WHEN s6 =>
-			--interne algorithmische veränderung der parameter?!?!?!
+			--interne algorithmische veränderung der parameter?!?!?!	
 			register.serin=mod_serin;
+			IF T[3]==1 THEN 			--möglichkeit Rotationsrochtung zu ändern
+				IF status==VCC
+					THEN register.mode[]=2;
+							status=GND;
+				ELSE register.mode[]=3;
+						status=VCC;
+				END IF;
+			END IF;
 			
-			IF T[1]==1 THEN m=s3; END IF;
+			IF T[2]==1 THEN m=s3; END IF;
 		WHEN s7 =>
-			IF T[0]==1 THEN m=s1; END IF;
+			IF T[1]==1 THEN m=s1; END IF;
 		END CASE;
 
 			

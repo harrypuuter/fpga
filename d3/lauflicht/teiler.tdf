@@ -1,0 +1,41 @@
+INCLUDE "lpm_counter.inc";
+
+SUBDESIGN teiler
+(
+CLOCK   		:INPUT;
+out 			:OUTPUT;
+)
+
+VARIABLE
+counter6		:lpm_counter WITH (LPM_WIDTH=6);
+counter12	:lpm_counter WITH (LPM_WIDTH=12, LPM_SVALUE=3906, LPM_DIRECTION=DOWN);
+flipflop		:TFF;
+
+
+BEGIN
+	counter6.clock=clock;
+	counter12.clock=counter6.cout;
+	flipflop.t=VCC;
+	--flipflop.clk=GND;
+	
+	IF counter12.q==0 THEN
+		--counter12.sset=VCC;
+		flipflop.clk=VCC;
+		--out=flipflop.q;
+		--out=VCC;
+		counter12.data[]=3906;
+		
+	ELSE 
+		--out=GND;
+		flipflop.clk=GND;
+		--counter12.sset=GND;
+	
+	END IF;
+	out=flipflop.q;
+	
+
+
+	
+	
+	
+END;

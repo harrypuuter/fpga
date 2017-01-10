@@ -2,4 +2,100 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'teiler:taktgeber|flipflop'
+Slack : -1.540
+TNS   : -6.037
+
+Type  : Slow Model Setup 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -1.475
+TNS   : -11.097
+
+Type  : Slow Model Setup 'CLOCK'
+Slack : -1.064
+TNS   : -13.159
+
+Type  : Slow Model Setup 'teiler:taktgeber|lpm_counter:counter12|cntr_rlj:auto_generated|safe_q[0]'
+Slack : 1.469
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK'
+Slack : -2.485
+TNS   : -28.588
+
+Type  : Slow Model Hold 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -2.255
+TNS   : -16.304
+
+Type  : Slow Model Hold 'teiler:taktgeber|lpm_counter:counter12|cntr_rlj:auto_generated|safe_q[0]'
+Slack : -1.217
+TNS   : -1.217
+
+Type  : Slow Model Hold 'teiler:taktgeber|flipflop'
+Slack : -0.137
+TNS   : -0.137
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK'
+Slack : -1.631
+TNS   : -27.293
+
+Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.611
+TNS   : -14.664
+
+Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|flipflop'
+Slack : -0.611
+TNS   : -8.554
+
+Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter12|cntr_rlj:auto_generated|safe_q[0]'
+Slack : -0.611
+TNS   : -1.222
+
+Type  : Fast Model Setup 'teiler:taktgeber|flipflop'
+Slack : -0.421
+TNS   : -0.541
+
+Type  : Fast Model Setup 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : 0.003
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast Model Setup 'teiler:taktgeber|lpm_counter:counter12|cntr_rlj:auto_generated|safe_q[0]'
+Slack : 0.966
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK'
+Slack : -1.579
+TNS   : -15.797
+
+Type  : Fast Model Hold 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.975
+TNS   : -7.822
+
+Type  : Fast Model Hold 'teiler:taktgeber|lpm_counter:counter12|cntr_rlj:auto_generated|safe_q[0]'
+Slack : -0.586
+TNS   : -0.586
+
+Type  : Fast Model Hold 'teiler:taktgeber|flipflop'
+Slack : -0.544
+TNS   : -0.544
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK'
+Slack : -1.380
+TNS   : -22.380
+
+Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.500
+TNS   : -12.000
+
+Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|flipflop'
+Slack : -0.500
+TNS   : -7.000
+
+Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter12|cntr_rlj:auto_generated|safe_q[0]'
+Slack : -0.500
+TNS   : -1.000
+
 ------------------------------------------------------------
