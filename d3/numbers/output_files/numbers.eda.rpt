@@ -1,5 +1,5 @@
 EDA Netlist Writer report for numbers
-Sun Jan  8 19:33:44 2017
+Tue Jan 10 10:01:42 2017
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Jan  8 19:33:44 2017 ;
+; EDA Netlist Writer Status ; Successful - Tue Jan 10 10:01:42 2017 ;
 ; Revision Name             ; numbers                               ;
 ; Top-level Entity Name     ; numbers                               ;
 ; Family                    ; Cyclone II                            ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jan  8 19:33:43 2017
+    Info: Processing started: Tue Jan 10 10:01:41 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off numbers -c numbers
 Info (204026): Generated files "numbers.vho", "numbers_fast.vho", "numbers_vhd.sdo" and "numbers_vhd_fast.sdo" in directory "/home/sebi/studium/elektronik/d3/numbers/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 321 megabytes
-    Info: Processing ended: Sun Jan  8 19:33:44 2017
+    Info: Processing ended: Tue Jan 10 10:01:42 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
