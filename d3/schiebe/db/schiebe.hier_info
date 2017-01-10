@@ -33,5 +33,6 @@ q[4] <= speicher[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= speicher[5].DB_MAX_OUTPUT_PORT_TYPE
 q[6] <= speicher[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= speicher[7].DB_MAX_OUTPUT_PORT_TYPE
+serout <= serout.DB_MAX_OUTPUT_PORT_TYPE
 
 
