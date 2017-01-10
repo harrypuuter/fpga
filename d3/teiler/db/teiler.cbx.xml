@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="teiler">
-		<CBX_INST_ENTRY INSTANCE_NAME="|teiler|lpm_counter:counter12" CBX_FILE_NAME="cntr_rlj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|teiler|lpm_counter:counter12" CBX_FILE_NAME="cntr_jnj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|teiler|lpm_counter:counter6" CBX_FILE_NAME="cntr_l7g.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
