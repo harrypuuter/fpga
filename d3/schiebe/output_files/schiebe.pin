@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 CHIP  "schiebe"  ASSIGNED TO AN: EP2C20F484C7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -333,7 +333,7 @@ GND*                         : K20       :        :                   :         
 GND*                         : K21       :        :                   :         : 5         :                
 GND*                         : K22       :        :                   :         : 5         :                
 GND+                         : L1        :        :                   :         : 2         :                
-MODE[0]                      : L2        : input  : 3.3-V LVTTL       :         : 2         : Y              
+MODE[1]                      : L2        : input  : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : L3        : power  :                   : 3.3V    : 2         :                
 nCONFIG                      : L4        :        :                   :         : 2         :                
 TDO                          : L5        : output :                   :         : 2         :                
@@ -354,7 +354,7 @@ GND*                         : L19       :        :                   :         
 VCCIO5                       : L20       : power  :                   : 3.3V    : 5         :                
 PARIN[1]                     : L21       : input  : 3.3-V LVTTL       :         : 5         : Y              
 PARIN[0]                     : L22       : input  : 3.3-V LVTTL       :         : 5         : Y              
-MODE[1]                      : M1        : input  : 3.3-V LVTTL       :         : 1         : Y              
+MODE[0]                      : M1        : input  : 3.3-V LVTTL       :         : 1         : Y              
 PARIN[7]                     : M2        : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : M3        : power  :                   : 3.3V    : 1         :                
 GND                          : M4        : gnd    :                   :         :           :                
@@ -415,7 +415,7 @@ NC                           : P14       :        :                   :         
 GND*                         : P15       :        :                   :         : 6         :                
 VCCIO6                       : P16       : power  :                   : 3.3V    : 6         :                
 GND*                         : P17       :        :                   :         : 6         :                
-serout                       : P18       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : P18       :        :                   :         : 6         :                
 NC                           : P19       :        :                   :         :           :                
 NC                           : P20       :        :                   :         :           :                
 NC                           : P21       :        :                   :         :           :                
@@ -550,5 +550,5 @@ GND*                         : Y17       :        :                   :         
 q[6]                         : Y18       : output : 3.3-V LVTTL       :         : 6         : Y              
 q[3]                         : Y19       : output : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : Y20       :        :                   :         : 6         :                
-GND*                         : Y21       :        :                   :         : 6         :                
+serout                       : Y21       : output : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : Y22       :        :                   :         : 6         :                

@@ -1,6 +1,6 @@
 Flow report for lauf
-Tue Jan 10 22:56:21 2017
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Jan 11 17:00:52 2017
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jan 10 22:56:19 2017           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Flow Status                        ; Successful - Wed Jan 11 17:00:49 2017           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lauf                                            ;
 ; Top-level Entity Name              ; lauf                                            ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 74 / 18,752 ( < 1 % )                           ;
-;     Total combinational functions  ; 73 / 18,752 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 41 / 18,752 ( < 1 % )                           ;
-; Total registers                    ; 41                                              ;
-; Total pins                         ; 22 / 315 ( 7 % )                                ;
+; Total logic elements               ; 89 / 18,752 ( < 1 % )                           ;
+;     Total combinational functions  ; 88 / 18,752 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 47 / 18,752 ( < 1 % )                           ;
+; Total registers                    ; 47                                              ;
+; Total pins                         ; 30 / 315 ( 10 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -64,25 +64,25 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/10/2017 22:56:11 ;
+; Start date & time ; 01/11/2017 17:00:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lauf                ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 57827281147236.148408537119344 ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --         ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
++--------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                       ;
++-------------------------------------+-----------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                 ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+-----------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 0.148415043632605     ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                    ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                     ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057              ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files          ; --            ; --          ; --         ;
++-------------------------------------+-----------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -90,24 +90,24 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 478 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 733 MB              ; 00:00:04                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 434 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 427 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:07                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 367 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 430 MB              ; 00:00:06                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 336 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 299 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-UG1VAHV  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-UG1VAHV  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-UG1VAHV  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-UG1VAHV  ; Windows 7 ; 6.2        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                               ;
++---------------------------+--------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname   ; OS Name        ; OS Version ; Processor type ;
++---------------------------+--------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; sebi-ThinkPad-L460 ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; Fitter                    ; sebi-ThinkPad-L460 ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; Assembler                 ; sebi-ThinkPad-L460 ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; sebi-ThinkPad-L460 ; Ubuntu 16.04.1 ; 16         ; x86_64         ;
++---------------------------+--------------------+----------------+------------+----------------+
 
 
 ------------

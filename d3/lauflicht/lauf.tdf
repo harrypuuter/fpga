@@ -1,6 +1,7 @@
 INCLUDE "schiebe";
 INCLUDE "lpm_counter";
 INCLUDE "teiler";
+INCLUDE "hex_conv";
 
 SUBDESIGN lauf
 (
@@ -8,64 +9,75 @@ clock			:INPUT;
 T[3..1]		:INPUT;
 parin[7..0]	:INPUT;
 out[7..0]	:OUTPUT;
-status		:OUTPUT; --1 rechts, 0 links 
-
+status_out	:OUTPUT; --1 rechts, 0 links 
+hex[6..0]	:OUTPUT;
+status_in	:INPUT;
 mod_serin	:INPUT;
 )
 
 VARIABLE
 	m :   MACHINE WITH STATES ( s1,s2,s3,s4,s5,s6,s7 );
 	register: schiebe;
-	warten_counter	:lpm_counter WITH (LPM_WIDTH=7, LPM_DIRECTION=DOWN);
+	warten_counter	:lpm_counter WITH (LPM_WIDTH=10, LPM_SVALUE=400, LPM_DIRECTION="DOWN");
 	taktgeber: teiler;
-
+	n: hex_conv;
+	status: TFF;
 
 BEGIN
-register.mode[]=0;
-warten_counter.clock=clock;
-out[]=register.q[];
-register.parin[]=parin[];
-
+--clocks
+--status.clk=clock;
+warten_counter.clock=taktgeber.out;
 taktgeber.clock=clock;
-m.clk=taktgeber.out;
+m.clk=clock;
+register.clock=clock;
+register.mode[]=0;
 
-
+--
+register.parin[]=parin[];
+hex[]=n.hex[];
+status.t = VCC;
+status_out=status.q;
+--warten_counter.sset=GND;
 
 	CASE m IS
 		WHEN s1 =>
 			IF T[1]==0 THEN m=s2; END IF;
+			n.digit = 1;
 		WHEN s2 =>
 			register.mode[]=1;
-			IF T[2]==1 THEN m=s3; END IF;
+			n.digit = 2;
+			IF T[1]==1 THEN m=s3; END IF;
 		WHEN s3 =>
-			warten_counter.data[]=64;
+			n.digit = 3;
 			m=s4;
 		WHEN s4 =>
-			register.clock=clock;
+			n.digit = 4;
+			IF status.q == VCC THEN 
+				register.mode[]=2;
+			ELSIF status.q == GND THEN 
+				register.mode[]=3;
+			END IF;
 			m=s5;
 		WHEN s5 =>
-			register.mode[]=3;
-			status=VCC;
-			IF T[1]==0 THEN m=s7;
-			ELSIF T[2]==0 & T[1]==1 THEN m=s6; 
-			ELSIF T[1]==1 $ T[2]==1$ warten_counter.q[]==0 THEN m=s3;
+			n.digit = 5;
+			IF T[1]==0 THEN 
+				m=s7;
+			ELSIF T[2]==0 & T[1]==1 THEN 
+				m=s6; 
+			ELSIF T[1]==1 & T[2]==1 & warten_counter.q==0 THEN 
+				warten_counter.sset=VCC;
+				m=s3;
 			END IF;	
 		WHEN s6 =>
 			--interne algorithmische veränderung der parameter?!?!?!	
+			n.digit = 6;
 			register.serin=mod_serin;
-			IF T[3]==1 THEN 			--möglichkeit Rotationsrochtung zu ändern
-				IF status==VCC
-					THEN register.mode[]=2;
-							status=GND;
-				ELSE register.mode[]=3;
-						status=VCC;
-				END IF;
-			END IF;
-			
+			--möglichkeit Rotationsrochtung zu ändern
+			status.clk=status_in;
 			IF T[2]==1 THEN m=s3; END IF;
 		WHEN s7 =>
+			n.digit = 7;
 			IF T[1]==1 THEN m=s1; END IF;
 		END CASE;
-
-			
+out[]=register.q[];			
 END;

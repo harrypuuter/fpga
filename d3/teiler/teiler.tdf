@@ -8,27 +8,22 @@ out 			:OUTPUT;
 
 VARIABLE
 counter6		:lpm_counter WITH (LPM_WIDTH=6);
-counter12	:lpm_counter WITH (LPM_WIDTH=17, LPM_SVALUE=78006, LPM_DIRECTION=DOWN);
+counter12	:lpm_counter WITH (LPM_WIDTH=15, LPM_SVALUE=3906, LPM_DIRECTION=DOWN);
 flipflop		:TFF;
 
 
 BEGIN
+	counter12.sset=GND;
 	counter6.clock=clock;
 	counter12.clock=counter6.cout;
 	flipflop.t=VCC;
-	--flipflop.clk=GND;
 	
 	IF counter12.q==0 THEN
-		--counter12.sset=VCC;
 		flipflop.clk=VCC;
-		--out=flipflop.q;
-		--out=VCC;
-		counter12.data[]=78006;
+		counter12.sset=VCC;
 		
 	ELSE 
-		--out=GND;
 		flipflop.clk=GND;
-		--counter12.sset=GND;
 	
 	END IF;
 	out=flipflop.q;

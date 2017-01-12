@@ -51,4 +51,35 @@ set_global_assignment -name AHDL_FILE schiebe.tdf
 set_global_assignment -name AHDL_FILE teiler.tdf
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_L1 -to CLOCK
+set_location_assignment PIN_Y21 -to out[7]
+set_location_assignment PIN_Y22 -to out[6]
+set_location_assignment PIN_W21 -to out[5]
+set_location_assignment PIN_W22 -to out[4]
+set_location_assignment PIN_V21 -to out[3]
+set_location_assignment PIN_V22 -to out[2]
+set_location_assignment PIN_U21 -to out[1]
+set_location_assignment PIN_U22 -to out[0]
+set_location_assignment PIN_M2 -to PARIN[7]
+set_location_assignment PIN_U11 -to PARIN[6]
+set_location_assignment PIN_U12 -to PARIN[5]
+set_location_assignment PIN_W12 -to PARIN[4]
+set_location_assignment PIN_V12 -to PARIN[3]
+set_location_assignment PIN_M22 -to PARIN[2]
+set_location_assignment PIN_L21 -to PARIN[1]
+set_location_assignment PIN_L22 -to PARIN[0]
+set_location_assignment PIN_T21 -to T[3]
+set_location_assignment PIN_T22 -to T[2]
+set_location_assignment PIN_R21 -to T[1]
+set_global_assignment -name VHDL_FILE hex_conv.vhd
+set_location_assignment PIN_E2 -to hex[6]
+set_location_assignment PIN_F1 -to hex[5]
+set_location_assignment PIN_F2 -to hex[4]
+set_location_assignment PIN_H1 -to hex[3]
+set_location_assignment PIN_H2 -to hex[2]
+set_location_assignment PIN_J1 -to hex[1]
+set_location_assignment PIN_J2 -to hex[0]
+set_location_assignment PIN_L2 -to status_in
+set_location_assignment PIN_R17 -to status_out
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,6 +1,6 @@
 Assembler report for schiebe
-Tue Jan 10 20:17:55 2017
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Jan 11 10:02:17 2017
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/schiebe/output_files/schiebe.sof
-  6. Assembler Device Options: F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/schiebe/output_files/schiebe.pof
+  5. Assembler Device Options: schiebe.sof
+  6. Assembler Device Options: schiebe.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jan 10 20:17:55 2017 ;
+; Assembler Status      ; Successful - Wed Jan 11 10:02:17 2017 ;
 ; Revision Name         ; schiebe                               ;
 ; Top-level Entity Name ; schiebe                               ;
 ; Family                ; Cyclone II                            ;
@@ -78,53 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Generated Files                                                        ;
-+----------------------------------------------------------------------------------+
-; File Name                                                                        ;
-+----------------------------------------------------------------------------------+
-; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/schiebe/output_files/schiebe.sof ;
-; F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/schiebe/output_files/schiebe.pof ;
-+----------------------------------------------------------------------------------+
++---------------------------+
+; Assembler Generated Files ;
++---------------------------+
+; File Name                 ;
++---------------------------+
+; schiebe.sof               ;
+; schiebe.pof               ;
++---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/schiebe/output_files/schiebe.sof ;
-+----------------+-------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                   ;
-+----------------+-------------------------------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                                              ;
-; JTAG usercode  ; 0x001B3DB2                                                                                ;
-; Checksum       ; 0x001B3DB2                                                                                ;
-+----------------+-------------------------------------------------------------------------------------------+
++---------------------------------------+
+; Assembler Device Options: schiebe.sof ;
++----------------+----------------------+
+; Option         ; Setting              ;
++----------------+----------------------+
+; Device         ; EP2C20F484C7         ;
+; JTAG usercode  ; 0x001B3D35           ;
+; Checksum       ; 0x001B3D35           ;
++----------------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/schiebe/output_files/schiebe.pof ;
-+--------------------+---------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                               ;
-+--------------------+---------------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                                ;
-; JTAG usercode      ; 0x00000000                                                                            ;
-; Checksum           ; 0x1DD96A64                                                                            ;
-; Compression Ratio  ; 3                                                                                     ;
-+--------------------+---------------------------------------------------------------------------------------+
++---------------------------------------+
+; Assembler Device Options: schiebe.pof ;
++--------------------+------------------+
+; Option             ; Setting          ;
++--------------------+------------------+
+; Device             ; EPCS16           ;
+; JTAG usercode      ; 0x00000000       ;
+; Checksum           ; 0x1DD9AC9F       ;
+; Compression Ratio  ; 3                ;
++--------------------+------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Assembler
+Info: Running Quartus II 32-bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jan 10 20:17:53 2017
+    Info: Processing started: Wed Jan 11 10:02:15 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off schiebe -c schiebe
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 440 megabytes
-    Info: Processing ended: Tue Jan 10 20:17:55 2017
+Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 341 megabytes
+    Info: Processing ended: Wed Jan 11 10:02:17 2017
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

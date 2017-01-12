@@ -3,26 +3,26 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -1.958
-TNS   : -19.343
+Slack : -2.456
+TNS   : -36.840
 
 Type  : Slow Model Setup 'clock'
-Slack : -0.929
-TNS   : -3.492
+Slack : -0.880
+TNS   : -3.248
 
-Type  : Slow Model Setup 'lpm_counter:counter12|cntr_jnj:auto_generated|safe_q[0]'
+Type  : Slow Model Setup 'lpm_counter:counter12|cntr_3nj:auto_generated|safe_q[0]'
 Slack : 0.307
 TNS   : 0.000
 
-Type  : Slow Model Hold 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -2.512
-TNS   : -23.921
-
 Type  : Slow Model Hold 'clock'
-Slack : -2.158
-TNS   : -9.988
+Slack : -2.452
+TNS   : -11.752
 
-Type  : Slow Model Hold 'lpm_counter:counter12|cntr_jnj:auto_generated|safe_q[0]'
+Type  : Slow Model Hold 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -2.169
+TNS   : -17.709
+
+Type  : Slow Model Hold 'lpm_counter:counter12|cntr_3nj:auto_generated|safe_q[0]'
 Slack : 0.445
 TNS   : 0.000
 
@@ -32,33 +32,33 @@ TNS   : -8.963
 
 Type  : Slow Model Minimum Pulse Width 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
 Slack : -0.611
-TNS   : -20.774
+TNS   : -18.330
 
-Type  : Slow Model Minimum Pulse Width 'lpm_counter:counter12|cntr_jnj:auto_generated|safe_q[0]'
+Type  : Slow Model Minimum Pulse Width 'lpm_counter:counter12|cntr_3nj:auto_generated|safe_q[0]'
 Slack : -0.611
 TNS   : -1.222
 
 Type  : Fast Model Setup 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -0.225
-TNS   : -0.539
+Slack : -0.362
+TNS   : -5.430
 
 Type  : Fast Model Setup 'clock'
-Slack : 0.266
+Slack : 0.284
 TNS   : 0.000
 
-Type  : Fast Model Setup 'lpm_counter:counter12|cntr_jnj:auto_generated|safe_q[0]'
+Type  : Fast Model Setup 'lpm_counter:counter12|cntr_3nj:auto_generated|safe_q[0]'
 Slack : 0.665
 TNS   : 0.000
 
 Type  : Fast Model Hold 'clock'
-Slack : -1.202
-TNS   : -6.172
+Slack : -1.289
+TNS   : -6.694
 
 Type  : Fast Model Hold 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -1.067
-TNS   : -11.136
+Slack : -0.924
+TNS   : -8.330
 
-Type  : Fast Model Hold 'lpm_counter:counter12|cntr_jnj:auto_generated|safe_q[0]'
+Type  : Fast Model Hold 'lpm_counter:counter12|cntr_3nj:auto_generated|safe_q[0]'
 Slack : 0.215
 TNS   : 0.000
 
@@ -68,9 +68,9 @@ TNS   : -7.380
 
 Type  : Fast Model Minimum Pulse Width 'lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
 Slack : -0.500
-TNS   : -17.000
+TNS   : -15.000
 
-Type  : Fast Model Minimum Pulse Width 'lpm_counter:counter12|cntr_jnj:auto_generated|safe_q[0]'
+Type  : Fast Model Minimum Pulse Width 'lpm_counter:counter12|cntr_3nj:auto_generated|safe_q[0]'
 Slack : -0.500
 TNS   : -1.000
 

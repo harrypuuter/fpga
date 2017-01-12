@@ -14,17 +14,16 @@ speicher[7..0]:DFF;
 
 
 BEGIN
-	speicher[].clk =clock;
-
+	speicher[].clk =!clock;
 	CASE mode[] IS
 		WHEN 0 => speicher[].d = speicher[].q;
 		WHEN 1 => speicher[].d =PARIN[];
 		WHEN 2 => speicher[7..1].d = speicher[6..0].q;
-		serout=speicher[7];
-		speicher[0].d=serin;
+		serout=speicher[7].q;
+		speicher[0].d=speicher[7].q;
 		WHEN 3 => speicher[6..0].d = speicher[7..1].q;
-		serout=speicher[1];
-		speicher[7].d=serin;
+		serout=speicher[0];
+		speicher[7].d=speicher[0].q;
 		
 
 	
