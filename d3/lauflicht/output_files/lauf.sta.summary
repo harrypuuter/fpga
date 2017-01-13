@@ -3,43 +3,43 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLOCK'
-Slack : -2.329
-TNS   : -30.773
+Slack : -2.935
+TNS   : -30.389
 
 Type  : Slow Model Setup 'teiler:taktgeber|flipflop'
-Slack : -2.131
-TNS   : -25.572
+Slack : -2.183
+TNS   : -21.830
 
 Type  : Slow Model Setup 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -2.095
-TNS   : -25.140
+Slack : -1.902
+TNS   : -22.824
 
 Type  : Slow Model Setup 'status_in'
 Slack : 0.307
 TNS   : 0.000
 
 Type  : Slow Model Setup 'teiler:taktgeber|lpm_counter:counter12|cntr_0nj:auto_generated|safe_q[0]'
-Slack : 2.464
+Slack : 3.590
 TNS   : 0.000
 
 Type  : Slow Model Hold 'teiler:taktgeber|lpm_counter:counter12|cntr_0nj:auto_generated|safe_q[0]'
-Slack : -2.212
-TNS   : -2.212
-
-Type  : Slow Model Hold 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -2.195
-TNS   : -15.645
+Slack : -3.338
+TNS   : -3.338
 
 Type  : Slow Model Hold 'CLOCK'
-Slack : -2.129
-TNS   : -5.674
+Slack : -2.314
+TNS   : -12.883
+
+Type  : Slow Model Hold 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
+Slack : -2.211
+TNS   : -15.776
 
 Type  : Slow Model Hold 'status_in'
 Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'teiler:taktgeber|flipflop'
-Slack : 0.624
+Slack : 0.633
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK'
@@ -50,56 +50,56 @@ Type  : Slow Model Minimum Pulse Width 'status_in'
 Slack : -1.631
 TNS   : -2.853
 
-Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|flipflop'
-Slack : -0.611
-TNS   : -14.664
-
 Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
 Slack : -0.611
 TNS   : -14.664
+
+Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|flipflop'
+Slack : -0.611
+TNS   : -12.220
 
 Type  : Slow Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter12|cntr_0nj:auto_generated|safe_q[0]'
 Slack : -0.611
 TNS   : -1.222
 
 Type  : Fast Model Setup 'CLOCK'
-Slack : -0.469
-TNS   : -4.196
+Slack : -0.513
+TNS   : -3.844
 
 Type  : Fast Model Setup 'teiler:taktgeber|flipflop'
-Slack : -0.296
-TNS   : -3.552
+Slack : -0.331
+TNS   : -3.310
 
 Type  : Fast Model Setup 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -0.261
-TNS   : -3.132
+Slack : -0.201
+TNS   : -2.412
 
 Type  : Fast Model Setup 'status_in'
 Slack : 0.665
 TNS   : 0.000
 
 Type  : Fast Model Setup 'teiler:taktgeber|lpm_counter:counter12|cntr_0nj:auto_generated|safe_q[0]'
-Slack : 1.306
+Slack : 1.724
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLOCK'
-Slack : -1.567
-TNS   : -4.562
+Slack : -1.555
+TNS   : -7.830
 
 Type  : Fast Model Hold 'teiler:taktgeber|lpm_counter:counter12|cntr_0nj:auto_generated|safe_q[0]'
-Slack : -0.926
-TNS   : -0.926
+Slack : -1.344
+TNS   : -1.344
 
 Type  : Fast Model Hold 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
-Slack : -0.923
-TNS   : -7.221
+Slack : -0.936
+TNS   : -7.354
 
 Type  : Fast Model Hold 'status_in'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'teiler:taktgeber|flipflop'
-Slack : 0.243
+Slack : 0.247
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK'
@@ -110,13 +110,13 @@ Type  : Fast Model Minimum Pulse Width 'status_in'
 Slack : -1.380
 TNS   : -2.380
 
-Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|flipflop'
-Slack : -0.500
-TNS   : -12.000
-
 Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter6|cntr_l7g:auto_generated|counter_reg_bit1a[0]'
 Slack : -0.500
 TNS   : -12.000
+
+Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|flipflop'
+Slack : -0.500
+TNS   : -10.000
 
 Type  : Fast Model Minimum Pulse Width 'teiler:taktgeber|lpm_counter:counter12|cntr_0nj:auto_generated|safe_q[0]'
 Slack : -0.500

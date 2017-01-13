@@ -77,7 +77,7 @@ BEGIN
 	GENERIC MAP (
 		lpm_direction => "DOWN",
 		lpm_port_updown => "PORT_UNUSED",
-		lpm_svalue => "3906",
+		lpm_svalue => "4095",
 		lpm_type => "LPM_COUNTER",
 		lpm_width => 12
 	)

@@ -1,6 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+library altera;
+USE altera.altera_primitives_components.all; 
 
 LIBRARY lpm;                 --Allows use of all Altera LPM 
 USE lpm.all;  --functions
@@ -31,25 +33,40 @@ port (
 	);
 end component;
 
+component tff
+    port(
+        t, clk		:  in  std_logic;
+        q         :  out std_logic);
+end component;
 
 
 signal cout: STD_LOGIC;
 signal reset: STD_LOGIC;
-
+signal toggle: STD_LOGIC;
+signal q_counter12	: STD_LOGIC_VECTOR (11 DOWNTO 0);
 
 
 begin
 
 counter1: counter6 port map(clock => clock, cout => cout);
-counter2: counter12 port map(clock => cout, sset => reset);
+counter2: counter12 port map(clock => cout, sset => reset, q=>q_counter12);
+toggler: tff port map(t=> '1', clk => toggle, q=>output); 
 
 check: process (cout) 
 begin
-if cout='1' then
-	reset <='1';
-	else reset <='0';
+	if unsigned(q_counter12)=0 then
+		toggle <= '1';
+		reset<='1';
+	else 
+		toggle <='0';
+		reset<='0';
 	end if;
 end process;
+
+
+
+
+
 
 	
 end;

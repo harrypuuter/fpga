@@ -18,7 +18,7 @@ mod_serin	:INPUT;
 VARIABLE
 	m :   MACHINE WITH STATES ( s1,s2,s3,s4,s5,s6,s7 );
 	register: schiebe;
-	warten_counter	:lpm_counter WITH (LPM_WIDTH=10, LPM_SVALUE=400, LPM_DIRECTION="DOWN");
+	warten_counter	:lpm_counter WITH (LPM_WIDTH=10, LPM_SVALUE=10, LPM_DIRECTION="DOWN");
 	taktgeber: teiler;
 	n: hex_conv;
 	status: TFF;
@@ -32,7 +32,7 @@ m.clk=clock;
 register.clock=clock;
 register.mode[]=0;
 
---
+
 register.parin[]=parin[];
 hex[]=n.hex[];
 status.t = VCC;
