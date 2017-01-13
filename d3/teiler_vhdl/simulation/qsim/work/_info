@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\Bibliotheken\OneDrive\Uni\Elektronik\fpga\d3\teiler_vhdl\simulation\qsim
+vteiler
+Z1 !s100 K@YkZW=Eai9h@kQ9b<X[;2
+Z2 InhDWEEhZ1JU5O:5cRZ]Ro3
+Z3 VH9]:>iCEMj@X?QeOj7jGS0
+Z4 dF:\Bibliotheken\OneDrive\Uni\Elektronik\fpga\d3\teiler_vhdl\simulation\qsim
+Z5 w1484344089
+Z6 8teiler.vo
+Z7 Fteiler.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|teiler.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1484344090.344000
+Z12 !s107 teiler.vo|
+!s101 -O0
+vteiler_vlg_sample_tst
+!i10b 1
+Z13 !s100 44g]IcUXmhE0^?hZcME_i3
+Z14 I_fFdl45niU1FXb<hJ=Xe=0
+Z15 Vj<=mD<6f?jHLSjZHRZga=1
+R4
+R5
+Z16 8teiler.vt
+Z17 Fteiler.vt
+L0 29
+R8
+r1
+!s85 0
+31
+!s108 1484344090.715000
+!s107 teiler.vt|
+Z18 !s90 -work|work|teiler.vt|
+!s101 -O0
+R10

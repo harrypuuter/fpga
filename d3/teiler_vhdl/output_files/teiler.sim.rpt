@@ -1,5 +1,5 @@
 Simulator report for teiler
-Fri Jan 13 21:10:58 2017
+Fri Jan 13 22:57:58 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 100.0 us     ;
-; Simulation Netlist Size     ; 40 nodes     ;
-; Simulation Coverage         ;      78.95 % ;
-; Total Number of Transitions ; 67142        ;
+; Simulation Netlist Size     ; 56 nodes     ;
+; Simulation Coverage         ;      60.49 % ;
+; Total Number of Transitions ; 67216        ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -94,100 +94,131 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      78.95 % ;
-; Total nodes checked                                 ; 40           ;
-; Total output ports checked                          ; 57           ;
-; Total output ports with complete 1/0-value coverage ; 45           ;
-; Total output ports with no 1/0-value coverage       ; 2            ;
-; Total output ports with no 1-value coverage         ; 7            ;
-; Total output ports with no 0-value coverage         ; 7            ;
+; Total coverage as a percentage                      ;      60.49 % ;
+; Total nodes checked                                 ; 56           ;
+; Total output ports checked                          ; 81           ;
+; Total output ports with complete 1/0-value coverage ; 49           ;
+; Total output ports with no 1/0-value coverage       ; 9            ;
+; Total output ports with no 1-value coverage         ; 27           ;
+; Total output ports with no 0-value coverage         ; 14           ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                                                                                                                                                                 ;
-+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                                                 ; Output Port Name                                                                                             ; Output Port Type ;
-+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------+
-; |teiler|clock                                                                                             ; |teiler|clock                                                                                                ; out              ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita0   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita0      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita0   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita0~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita1   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita1      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita1   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita1~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita2   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita2      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita2   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita2~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita3   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita3      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita3   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita3~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita4   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita4      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita4   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita4~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita5   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita5      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita5   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita5~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita6   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita6      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita6   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita6~COUT ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita7   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita7      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita8   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita8      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita9   ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita9      ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita10  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita10     ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita11  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita11     ; combout          ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[6] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[6]               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[5] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[5]               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[4] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[4]               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[3] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[3]               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[2] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[2]               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[1] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[1]               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[0] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[0]               ; regout           ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita0    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita0       ; combout          ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita0    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita0~COUT  ; cout             ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita1    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita1       ; combout          ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita1    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita1~COUT  ; cout             ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita2    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita2       ; combout          ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita2    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita2~COUT  ; cout             ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita3    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita3       ; combout          ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita3    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita3~COUT  ; cout             ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita4    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita4       ; combout          ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita4    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita4~COUT  ; cout             ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita5    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita5       ; combout          ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita5    ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_comb_bita5~COUT  ; cout             ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_reg_bit1a[5]  ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|safe_q[5]                ; regout           ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_reg_bit1a[4]  ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|safe_q[4]                ; regout           ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_reg_bit1a[3]  ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|safe_q[3]                ; regout           ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_reg_bit1a[2]  ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|safe_q[2]                ; regout           ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_reg_bit1a[1]  ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|safe_q[1]                ; regout           ;
-; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|counter_reg_bit1a[0]  ; |teiler|counter6:counter1|lpm_counter:LPM_COUNTER_component|cntr_l3i:auto_generated|safe_q[0]                ; regout           ;
-+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                   ;
++----------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; Node Name                                                                  ; Output Port Name                                                              ; Output Port Type ;
++----------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; |teiler|clock                                                              ; |teiler|clock                                                                 ; out              ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita0   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita0      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita0   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita1   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita1      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita1   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita2   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita2      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita2   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita2~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita3   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita3      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita3   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita3~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita4   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita4      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita4   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita4~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita5   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita5      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita5   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita5~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita6   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita6      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita6   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita6~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita7   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita7      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita7   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita7~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita8   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita8      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita8   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita8~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita9   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita9      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita10  ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita10     ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita11  ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita11     ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita12  ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita12     ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[8] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[8]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[6] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[6]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[5] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[5]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[4] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[4]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[3] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[3]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[2] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[2]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[1] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[1]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[0] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[0]               ; regout           ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita0    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita0       ; combout          ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita0    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita0~COUT  ; cout             ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita1    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita1       ; combout          ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita1    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita1~COUT  ; cout             ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita2    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita2       ; combout          ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita2    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita2~COUT  ; cout             ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita3    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita3       ; combout          ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita3    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita3~COUT  ; cout             ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita4    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita4       ; combout          ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita4    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita4~COUT  ; cout             ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita5    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita5       ; combout          ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita5    ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_comb_bita5~COUT  ; cout             ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[5]  ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[5]     ; regout           ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[4]  ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[4]     ; regout           ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[3]  ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[3]     ; regout           ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[2]  ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[2]     ; regout           ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[1]  ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[1]     ; regout           ;
+; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]  ; |teiler|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]     ; regout           ;
++----------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                                                ; Output Port Name                                                                                              ; Output Port Type ;
-+----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------+
-; |teiler|output                                                                                           ; |teiler|output                                                                                                ; pin_out          ;
-; |teiler|toggler                                                                                          ; |teiler|toggler                                                                                               ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita7  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita7~COUT  ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita8  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita8~COUT  ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita9  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita9~COUT  ; cout             ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita10 ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_comb_bita10~COUT ; cout             ;
-; |teiler|Equal0~0                                                                                         ; |teiler|Equal0~0                                                                                              ; out0             ;
-+----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                        ;
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
+; Node Name                                                                   ; Output Port Name                                                               ; Output Port Type ;
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
+; |teiler|output                                                              ; |teiler|output                                                                 ; pin_out          ;
+; |teiler|toggler                                                             ; |teiler|toggler                                                                ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita9    ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita9~COUT  ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita10   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita10~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita11   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita11~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita12   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita12~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita13   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita13      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita13   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita13~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita14   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita14      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita14   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita14~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita15   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita15      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita15   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita15~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita16   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita16      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita16   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita16~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita17   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita17      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita17   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita17~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita18   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita18      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita18   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita18~COUT ; cout             ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita19   ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_comb_bita19      ; combout          ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[19] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[19]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[18] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[18]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[17] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[17]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[16] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[16]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[15] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[15]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[14] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[14]               ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[13] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[13]               ; regout           ;
+; |teiler|Equal0~0                                                            ; |teiler|Equal0~0                                                               ; out0             ;
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                                                                                                                                                        ;
-+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                                                  ; Output Port Name                                                                                ; Output Port Type ;
-+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------+
-; |teiler|output                                                                                             ; |teiler|output                                                                                  ; pin_out          ;
-; |teiler|toggler                                                                                            ; |teiler|toggler                                                                                 ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[11] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[11] ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[10] ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[10] ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[9]  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[9]  ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[8]  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[8]  ; regout           ;
-; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|counter_reg_bit1a[7]  ; |teiler|counter12:counter2|lpm_counter:LPM_COUNTER_component|cntr_1nj:auto_generated|safe_q[7]  ; regout           ;
-+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                          ;
++-----------------------------------------------------------------------------+------------------------------------------------------------------+------------------+
+; Node Name                                                                   ; Output Port Name                                                 ; Output Port Type ;
++-----------------------------------------------------------------------------+------------------------------------------------------------------+------------------+
+; |teiler|output                                                              ; |teiler|output                                                   ; pin_out          ;
+; |teiler|toggler                                                             ; |teiler|toggler                                                  ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[19] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[19] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[18] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[18] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[17] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[17] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[16] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[16] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[15] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[15] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[14] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[14] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[13] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[13] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[12] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[12] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[11] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[11] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[10] ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[10] ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[9]  ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[9]  ; regout           ;
+; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|counter_reg_bit1a[7]  ; |teiler|lpm_counter:counter12|cntr_omj:auto_generated|safe_q[7]  ; regout           ;
++-----------------------------------------------------------------------------+------------------------------------------------------------------+------------------+
 
 
 +---------------------+
@@ -203,20 +234,19 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jan 13 21:10:57 2017
+    Info: Processing started: Fri Jan 13 22:57:58 2017
 Info: Command: quartus_sim --simulation_results_format=VWF teiler -c teiler
 Info (324025): Using vector source file "F:/Bibliotheken/OneDrive/Uni/Elektronik/fpga/d3/teiler_vhdl/Waveform_teiler.vwf"
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "out" in design.
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      78.95 %
-Info (328052): Number of transitions in simulation is 67142
+Info (328053): Simulation coverage is      60.49 %
+Info (328052): Number of transitions in simulation is 67216
 Info (324045): Vector file teiler.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 331 megabytes
-    Info: Processing ended: Fri Jan 13 21:10:58 2017
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Fri Jan 13 22:57:58 2017
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

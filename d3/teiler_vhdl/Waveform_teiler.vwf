@@ -43,7 +43,7 @@ SIGNAL("clock")
 	PARENT = "";
 }
 
-SIGNAL("out")
+SIGNAL("output")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -67,13 +67,12 @@ TRANSITION_LIST("clock")
 	}
 }
 
-TRANSITION_LIST("out")
+TRANSITION_LIST("output")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 639.0;
-		LEVEL 0 FOR 99361.0;
+		LEVEL X FOR 100000.0;
 	}
 }
 
@@ -88,7 +87,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "out";
+	CHANNEL = "output";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;

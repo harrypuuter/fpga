@@ -17,21 +17,22 @@ end;
 
 architecture behave of teiler is
 
-component counter6
-port (
-		clock		: IN STD_LOGIC ;
-		cout		: OUT STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (5 DOWNTO 0)
-	);
+
+component lpm_counter
+ generic ( 	LPM_WIDTH : natural;
+				LPM_DIRECTION : string := "unused";
+				LPM_SVALUE: STRING := "UNUSED"
+			);
+
+ port (
+ CLOCK : in std_logic ;
+ SSET : in std_logic := '0';
+ COUT : out std_logic := '0';
+ Q : out std_logic_vector(LPM_WIDTH-1 downto 0)
+ );
 end component;
 
-component counter12
-port (
-		clock		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
-		sset	: IN STD_LOGIC
-	);
-end component;
+
 
 component tff
     port(
@@ -48,11 +49,12 @@ signal q_counter12	: STD_LOGIC_VECTOR (11 DOWNTO 0);
 
 begin
 
-counter1: counter6 port map(clock => clock, cout => cout);
-counter2: counter12 port map(clock => cout, sset => reset, q=>q_counter12);
+counter6:  lpm_counter generic map (lpm_width => 6,  lpm_direction=>"UP") port map(clock => clock, cout => cout);
+counter12: lpm_counter generic map (lpm_width => 12, lpm_direction=>"DOWN", lpm_svalue=>"3906") port map(clock => cout, q=> q_counter12, sset=> reset);
+ 
 toggler: tff port map(t=> '1', clk => toggle, q=>output); 
 
-check: process (cout) 
+check: process (reset) 
 begin
 	if unsigned(q_counter12)=0 then
 		toggle <= '1';
@@ -62,7 +64,6 @@ begin
 		reset<='0';
 	end if;
 end process;
-
 
 
 
