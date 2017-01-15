@@ -1,0 +1,11 @@
+|volladdierer
+a => sum_h1.IN0
+a => cout_h1.IN0
+b => sum_h1.IN1
+b => cout_h1.IN1
+cmin1 => sum.IN1
+cmin1 => ueber_h2.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
