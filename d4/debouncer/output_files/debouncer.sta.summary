@@ -1,0 +1,61 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clock'
+Slack : -3.030
+TNS   : -54.754
+
+Type  : Slow Model Setup 'flipflop'
+Slack : -0.808
+TNS   : -2.340
+
+Type  : Slow Model Hold 'clock'
+Slack : -1.409
+TNS   : -7.173
+
+Type  : Slow Model Hold 'flipflop'
+Slack : 0.908
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clock'
+Slack : -1.631
+TNS   : -41.957
+
+Type  : Slow Model Minimum Pulse Width 'flipflop'
+Slack : -0.611
+TNS   : -4.888
+
+Type  : Slow Model Minimum Pulse Width 'lpm_counter:counter|cntr_77i:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.611
+TNS   : -1.222
+
+Type  : Fast Model Setup 'clock'
+Slack : -0.706
+TNS   : -6.735
+
+Type  : Fast Model Setup 'flipflop'
+Slack : 0.317
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock'
+Slack : -0.824
+TNS   : -7.553
+
+Type  : Fast Model Hold 'flipflop'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clock'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Fast Model Minimum Pulse Width 'flipflop'
+Slack : -0.500
+TNS   : -4.000
+
+Type  : Fast Model Minimum Pulse Width 'lpm_counter:counter|cntr_77i:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------

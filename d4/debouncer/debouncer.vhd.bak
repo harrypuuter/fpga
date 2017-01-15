@@ -1,0 +1,55 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library altera;
+USE altera.altera_primitives_components.all; 
+
+LIBRARY lpm;                 --Allows use of all Altera LPM 
+USE lpm.all;  --functions
+
+entity debouncer is
+port(
+	taster: in std_logic;
+	clock: in std_logic
+
+);
+
+end;
+
+component lpm_counter
+ generic ( 	LPM_WIDTH : natural;
+				LPM_DIRECTION : string := "DOWN";
+				LPM_SVALUE: STRING := "UNUSED"
+			);
+
+ port (
+ CLOCK : in std_logic ;
+ SSET : in std_logic := '0';
+ cnt_en: IN STD_LOGIC := '1';
+ clk_en: IN STD_LOGIC := '0';
+ COUT : out std_logic := '0';
+ Q : out std_logic_vector(LPM_WIDTH-1 downto 0)
+ );
+
+architecture behave of debouncer is
+
+signal cout: STD_LOGIC;
+signal cnt_en: std_logic;
+
+
+begin
+counter6:  lpm_counter generic map (lpm_width => 6) port map(clock => clock, cout => cout, cnt_en => cnt_en);
+
+add: process (taster) 
+begin
+	cnt_en <='1';
+	
+	
+end process;
+
+
+
+
+
+	
+end;
