@@ -12,7 +12,10 @@ port(
 	taster: in std_logic;
 	clock: in std_logic;
 	output: out std_logic;
-	hexout: out std_logic_vector(6 downto 0)
+	hexout: out std_logic_vector(6 downto 0);
+	
+	taster_bouncing: in std_logic;
+	hexout_bouncing: out std_logic_vector(6 downto 0)
 
 );
 
@@ -31,7 +34,7 @@ component lpm_counter
  CLOCK : in std_logic ;
  SSET : in std_logic := '0';
  cnt_en: IN STD_LOGIC := '1';
- clk_en: IN STD_LOGIC := '1';
+ clk_en: IN STD_LOGIC := '0';
  COUT : out std_logic := '0';
  Q : out std_logic_vector(LPM_WIDTH-1 downto 0)
  );
@@ -55,13 +58,16 @@ signal clk_en: std_logic;
 signal d: std_logic;
 signal debounced: std_logic;
 signal count: std_logic_vector(3 downto 0);
+signal count_bouncing: std_logic_vector(3 downto 0);
 
 
 begin
 counter:  lpm_counter generic map (lpm_width => 33) port map(clock => clock, cout => cout, clk_en => clk_en);
-testcounter: lpm_counter generic map (lpm_width => 4) port map(clock => debounced, q => count);
+testcounter: lpm_counter generic map (lpm_width => 4, lpm_direction => "UP") port map(clock => debounced, q => count, clk_en => '1');
+testcounter_bouncing: lpm_counter generic map (lpm_width => 4, lpm_direction => "UP") port map(clock => taster_bouncing, q => count_bouncing, clk_en => '1');
 flipflop: dff port map (clk => clock, d => d, q => debounced);
 hex: hex_conv port map(digit => count, hex => hexout);
+hex_bouncing: hex_conv port map(digit => count_bouncing, hex => hexout_bouncing); 
 
 process (clock) 
 begin

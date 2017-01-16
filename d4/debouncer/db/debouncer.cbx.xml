@@ -1,7 +1,8 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="debouncer">
-		<CBX_INST_ENTRY INSTANCE_NAME="|debouncer|lpm_counter:counter" CBX_FILE_NAME="cntr_77i.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|debouncer|lpm_counter:testcounter" CBX_FILE_NAME="cntr_brh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|debouncer|lpm_counter:counter" CBX_FILE_NAME="cntr_coh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|debouncer|lpm_counter:testcounter" CBX_FILE_NAME="cntr_okh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|debouncer|lpm_counter:testcounter_bouncing" CBX_FILE_NAME="cntr_okh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

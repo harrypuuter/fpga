@@ -1,6 +1,7 @@
 |debouncer
 taster => flipflop.DATAIN
 clock => lpm_counter:counter.CLOCK
+clock => flipflop.CLK
 output <= flipflop.DB_MAX_OUTPUT_PORT_TYPE
 hexout[0] <= hex_conv:hex.hex[0]
 hexout[1] <= hex_conv:hex.hex[1]
@@ -9,10 +10,18 @@ hexout[3] <= hex_conv:hex.hex[3]
 hexout[4] <= hex_conv:hex.hex[4]
 hexout[5] <= hex_conv:hex.hex[5]
 hexout[6] <= hex_conv:hex.hex[6]
+taster_bouncing => lpm_counter:testcounter_bouncing.CLOCK
+hexout_bouncing[0] <= hex_conv:hex_bouncing.hex[0]
+hexout_bouncing[1] <= hex_conv:hex_bouncing.hex[1]
+hexout_bouncing[2] <= hex_conv:hex_bouncing.hex[2]
+hexout_bouncing[3] <= hex_conv:hex_bouncing.hex[3]
+hexout_bouncing[4] <= hex_conv:hex_bouncing.hex[4]
+hexout_bouncing[5] <= hex_conv:hex_bouncing.hex[5]
+hexout_bouncing[6] <= hex_conv:hex_bouncing.hex[6]
 
 
 |debouncer|lpm_counter:counter
-clock => cntr_77i:auto_generated.clock
+clock => cntr_coh:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
@@ -91,7 +100,7 @@ q[29] <= <GND>
 q[30] <= <GND>
 q[31] <= <GND>
 q[32] <= <GND>
-cout <= cntr_77i:auto_generated.cout
+cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
 eq[2] <= <GND>
@@ -110,7 +119,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|debouncer|lpm_counter:counter|cntr_77i:auto_generated
+|debouncer|lpm_counter:counter|cntr_coh:auto_generated
 clock => counter_reg_bit1a[32].CLK
 clock => counter_reg_bit1a[31].CLK
 clock => counter_reg_bit1a[30].CLK
@@ -144,11 +153,10 @@ clock => counter_reg_bit1a[3].CLK
 clock => counter_reg_bit1a[2].CLK
 clock => counter_reg_bit1a[1].CLK
 clock => counter_reg_bit1a[0].CLK
-cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |debouncer|lpm_counter:testcounter
-clock => cntr_brh:auto_generated.clock
+clock => cntr_okh:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
@@ -165,10 +173,10 @@ data[1] => ~NO_FANOUT~
 data[2] => ~NO_FANOUT~
 data[3] => ~NO_FANOUT~
 cin => ~NO_FANOUT~
-q[0] <= cntr_brh:auto_generated.q[0]
-q[1] <= cntr_brh:auto_generated.q[1]
-q[2] <= cntr_brh:auto_generated.q[2]
-q[3] <= cntr_brh:auto_generated.q[3]
+q[0] <= cntr_okh:auto_generated.q[0]
+q[1] <= cntr_okh:auto_generated.q[1]
+q[2] <= cntr_okh:auto_generated.q[2]
+q[3] <= cntr_okh:auto_generated.q[3]
 cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
@@ -188,7 +196,59 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|debouncer|lpm_counter:testcounter|cntr_brh:auto_generated
+|debouncer|lpm_counter:testcounter|cntr_okh:auto_generated
+clock => counter_reg_bit1a[3].CLK
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
+q[0] <= counter_reg_bit1a[0].REGOUT
+q[1] <= counter_reg_bit1a[1].REGOUT
+q[2] <= counter_reg_bit1a[2].REGOUT
+q[3] <= counter_reg_bit1a[3].REGOUT
+
+
+|debouncer|lpm_counter:testcounter_bouncing
+clock => cntr_okh:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_okh:auto_generated.q[0]
+q[1] <= cntr_okh:auto_generated.q[1]
+q[2] <= cntr_okh:auto_generated.q[2]
+q[3] <= cntr_okh:auto_generated.q[3]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|debouncer|lpm_counter:testcounter_bouncing|cntr_okh:auto_generated
 clock => counter_reg_bit1a[3].CLK
 clock => counter_reg_bit1a[2].CLK
 clock => counter_reg_bit1a[1].CLK
@@ -200,6 +260,80 @@ q[3] <= counter_reg_bit1a[3].REGOUT
 
 
 |debouncer|hex_conv:hex
+digit[0] => Equal0.IN7
+digit[0] => Equal1.IN7
+digit[0] => Equal2.IN7
+digit[0] => Equal3.IN7
+digit[0] => Equal4.IN7
+digit[0] => Equal5.IN7
+digit[0] => Equal6.IN7
+digit[0] => Equal7.IN7
+digit[0] => Equal8.IN7
+digit[0] => Equal9.IN7
+digit[0] => Equal10.IN7
+digit[0] => Equal11.IN7
+digit[0] => Equal12.IN7
+digit[0] => Equal13.IN7
+digit[0] => Equal14.IN7
+digit[0] => Equal15.IN7
+digit[1] => Equal0.IN6
+digit[1] => Equal1.IN6
+digit[1] => Equal2.IN6
+digit[1] => Equal3.IN6
+digit[1] => Equal4.IN6
+digit[1] => Equal5.IN6
+digit[1] => Equal6.IN6
+digit[1] => Equal7.IN6
+digit[1] => Equal8.IN6
+digit[1] => Equal9.IN6
+digit[1] => Equal10.IN6
+digit[1] => Equal11.IN6
+digit[1] => Equal12.IN6
+digit[1] => Equal13.IN6
+digit[1] => Equal14.IN6
+digit[1] => Equal15.IN6
+digit[2] => Equal0.IN5
+digit[2] => Equal1.IN5
+digit[2] => Equal2.IN5
+digit[2] => Equal3.IN5
+digit[2] => Equal4.IN5
+digit[2] => Equal5.IN5
+digit[2] => Equal6.IN5
+digit[2] => Equal7.IN5
+digit[2] => Equal8.IN5
+digit[2] => Equal9.IN5
+digit[2] => Equal10.IN5
+digit[2] => Equal11.IN5
+digit[2] => Equal12.IN5
+digit[2] => Equal13.IN5
+digit[2] => Equal14.IN5
+digit[2] => Equal15.IN5
+digit[3] => Equal0.IN4
+digit[3] => Equal1.IN4
+digit[3] => Equal2.IN4
+digit[3] => Equal3.IN4
+digit[3] => Equal4.IN4
+digit[3] => Equal5.IN4
+digit[3] => Equal6.IN4
+digit[3] => Equal7.IN4
+digit[3] => Equal8.IN4
+digit[3] => Equal9.IN4
+digit[3] => Equal10.IN4
+digit[3] => Equal11.IN4
+digit[3] => Equal12.IN4
+digit[3] => Equal13.IN4
+digit[3] => Equal14.IN4
+digit[3] => Equal15.IN4
+hex[0] <= hex[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= hex[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= hex[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= hex[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= hex[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= hex[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= hex[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|hex_conv:hex_bouncing
 digit[0] => Equal0.IN7
 digit[0] => Equal1.IN7
 digit[0] => Equal2.IN7

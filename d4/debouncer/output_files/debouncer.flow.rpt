@@ -1,5 +1,5 @@
 Flow report for debouncer
-Sun Jan 15 22:53:09 2017
+Mon Jan 16 18:53:34 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun Jan 15 22:53:07 2017           ;
+; Flow Status                        ; Successful - Mon Jan 16 18:53:33 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; debouncer                                       ;
 ; Top-level Entity Name              ; debouncer                                       ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 45 / 18,752 ( < 1 % )                           ;
-;     Total combinational functions  ; 45 / 18,752 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 38 / 18,752 ( < 1 % )                           ;
-; Total registers                    ; 38                                              ;
-; Total pins                         ; 10 / 315 ( 3 % )                                ;
+; Total logic elements               ; 23 / 18,752 ( < 1 % )                           ;
+;     Total combinational functions  ; 22 / 18,752 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 9 / 18,752 ( < 1 % )                            ;
+; Total registers                    ; 9                                               ;
+; Total pins                         ; 18 / 315 ( 6 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/15/2017 22:53:00 ;
+; Start date & time ; 01/16/2017 18:53:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; debouncer           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 57827281147236.148451718004916 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 57827281147236.148458920607996 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
@@ -90,10 +90,10 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 538 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 534 MB              ; 00:00:01                           ;
 ; Fitter                    ; 00:00:03     ; 1.0                     ; 731 MB              ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 434 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 439 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 440 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 440 MB              ; 00:00:01                           ;
 ; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
