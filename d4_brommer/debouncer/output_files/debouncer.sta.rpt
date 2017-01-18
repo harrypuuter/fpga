@@ -1,0 +1,927 @@
+TimeQuest Timing Analyzer report for debouncer
+Wed Jan 18 17:12:59 2017
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'debounce_flip_flip'
+ 12. Slow Model Setup: 'start'
+ 13. Slow Model Setup: 'clock'
+ 14. Slow Model Hold: 'clock'
+ 15. Slow Model Hold: 'start'
+ 16. Slow Model Hold: 'debounce_flip_flip'
+ 17. Slow Model Minimum Pulse Width: 'start'
+ 18. Slow Model Minimum Pulse Width: 'clock'
+ 19. Slow Model Minimum Pulse Width: 'debounce_flip_flip'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'debounce_flip_flip'
+ 30. Fast Model Setup: 'start'
+ 31. Fast Model Setup: 'clock'
+ 32. Fast Model Hold: 'clock'
+ 33. Fast Model Hold: 'start'
+ 34. Fast Model Hold: 'debounce_flip_flip'
+ 35. Fast Model Minimum Pulse Width: 'start'
+ 36. Fast Model Minimum Pulse Width: 'clock'
+ 37. Fast Model Minimum Pulse Width: 'debounce_flip_flip'
+ 38. Setup Times
+ 39. Hold Times
+ 40. Clock to Output Times
+ 41. Minimum Clock to Output Times
+ 42. Multicorner Timing Analysis Summary
+ 43. Setup Times
+ 44. Hold Times
+ 45. Clock to Output Times
+ 46. Minimum Clock to Output Times
+ 47. Setup Transfers
+ 48. Hold Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; debouncer                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                 ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+; Clock Name         ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+; clock              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }              ;
+; debounce_flip_flip ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debounce_flip_flip } ;
+; start              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { start }              ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                            ;
++-------------+-----------------+--------------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name         ; Note                                                          ;
++-------------+-----------------+--------------------+---------------------------------------------------------------+
+; 543.18 MHz  ; 450.05 MHz      ; debounce_flip_flip ; limit due to high minimum pulse width violation (tch)         ;
+; 553.1 MHz   ; 380.08 MHz      ; start              ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 1157.41 MHz ; 380.08 MHz      ; clock              ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+--------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------+
+; Slow Model Setup Summary                    ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; debounce_flip_flip ; -0.841 ; -2.532        ;
+; start              ; -0.808 ; -2.400        ;
+; clock              ; 0.101  ; 0.000         ;
++--------------------+--------+---------------+
+
+
++--------------------------------------------+
+; Slow Model Hold Summary                    ;
++--------------------+-------+---------------+
+; Clock              ; Slack ; End Point TNS ;
++--------------------+-------+---------------+
+; clock              ; 0.151 ; 0.000         ;
+; start              ; 0.664 ; 0.000         ;
+; debounce_flip_flip ; 1.001 ; 0.000         ;
++--------------------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++---------------------------------------------+
+; Slow Model Minimum Pulse Width Summary      ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; start              ; -1.631 ; -6.519        ;
+; clock              ; -1.631 ; -5.297        ;
+; debounce_flip_flip ; -0.611 ; -4.888        ;
++--------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'debounce_flip_flip'                                                                                                                                                                              ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                    ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; -0.841 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.879      ;
+; -0.816 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.854      ;
+; -0.761 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.799      ;
+; -0.736 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.774      ;
+; -0.721 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.759      ;
+; -0.681 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.719      ;
+; -0.303 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.341      ;
+; -0.288 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.326      ;
+; -0.267 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.305      ;
+; -0.249 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 1.287      ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'start'                                                                                                                                                                                                  ;
++--------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                            ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.808 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 1.846      ;
+; -0.728 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 1.000        ; 0.000      ; 1.766      ;
+; -0.728 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 1.766      ;
+; -0.692 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 1.730      ;
+; -0.648 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 1.000        ; 0.000      ; 1.686      ;
+; -0.648 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 1.000        ; 0.000      ; 1.686      ;
+; -0.260 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 1.000        ; 0.000      ; 1.298      ;
+; -0.216 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; start        ; start       ; 1.000        ; 0.000      ; 1.254      ;
+; -0.216 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 1.000        ; 0.000      ; 1.254      ;
+; 0.088  ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 0.950      ;
++--------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                      ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 0.101 ; start       ; toggle_ff_1        ; start        ; clock       ; 0.500        ; 2.871      ; 3.308      ;
+; 0.136 ; toggle_ff_1 ; toggle_ff_2        ; clock        ; clock       ; 1.000        ; 0.000      ; 0.902      ;
+; 0.137 ; toggle_ff_2 ; debounce_flip_flip ; clock        ; clock       ; 1.000        ; 0.000      ; 0.901      ;
+; 0.601 ; start       ; toggle_ff_1        ; start        ; clock       ; 1.000        ; 2.871      ; 3.308      ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                       ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 0.151 ; start       ; toggle_ff_1        ; start        ; clock       ; 0.000        ; 2.871      ; 3.308      ;
+; 0.615 ; toggle_ff_2 ; debounce_flip_flip ; clock        ; clock       ; 0.000        ; 0.000      ; 0.901      ;
+; 0.616 ; toggle_ff_1 ; toggle_ff_2        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.902      ;
+; 0.651 ; start       ; toggle_ff_1        ; start        ; clock       ; -0.500       ; 2.871      ; 3.308      ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'start'                                                                                                                                                                                                  ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                            ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.664 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 0.950      ;
+; 0.968 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; start        ; start       ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 0.000        ; 0.000      ; 1.254      ;
+; 1.012 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 0.000        ; 0.000      ; 1.298      ;
+; 1.400 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 0.000        ; 0.000      ; 1.686      ;
+; 1.400 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 0.000        ; 0.000      ; 1.686      ;
+; 1.444 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 1.730      ;
+; 1.480 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 0.000        ; 0.000      ; 1.766      ;
+; 1.480 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 1.766      ;
+; 1.560 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 1.846      ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'debounce_flip_flip'                                                                                                                                                                              ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                    ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; 1.001 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.287      ;
+; 1.019 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.305      ;
+; 1.040 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.326      ;
+; 1.055 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.341      ;
+; 1.433 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.719      ;
+; 1.473 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.759      ;
+; 1.488 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.774      ;
+; 1.513 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.799      ;
+; 1.568 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.854      ;
+; 1.593 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 1.879      ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'start'                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; start ; Rise       ; start                                                                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; start|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; start|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; start~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; start~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; start~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; start~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[3]|clk       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clock ; Rise       ; clock                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; debounce_flip_flip     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; debounce_flip_flip     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; toggle_ff_1            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_1            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; toggle_ff_2            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_2            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; debounce_flip_flip|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; debounce_flip_flip|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; toggle_ff_1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; toggle_ff_2|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_2|clk        ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'debounce_flip_flip'                                                                                                     ;
++--------+--------------+----------------+------------------+--------------------+------------+------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock              ; Clock Edge ; Target                                                     ;
++--------+--------------+----------------+------------------+--------------------+------------+------------------------------------------------------------+
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; debounce_flip_flip|regout                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; debounce_flip_flip|regout                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|inclk[0]                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|inclk[0]                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|outclk                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|outclk                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[3]|clk       ;
++--------+--------------+----------------+------------------+--------------------+------------+------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; start     ; clock      ; 0.399 ; 0.399 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; start     ; clock      ; -0.151 ; -0.151 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise  ; Fall  ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; hex0[*]   ; debounce_flip_flip ; 7.393 ; 7.393 ; Rise       ; debounce_flip_flip ;
+;  hex0[0]  ; debounce_flip_flip ; 7.357 ; 7.357 ; Rise       ; debounce_flip_flip ;
+;  hex0[1]  ; debounce_flip_flip ; 7.393 ; 7.393 ; Rise       ; debounce_flip_flip ;
+;  hex0[2]  ; debounce_flip_flip ; 7.279 ; 7.279 ; Rise       ; debounce_flip_flip ;
+;  hex0[3]  ; debounce_flip_flip ; 7.382 ; 7.382 ; Rise       ; debounce_flip_flip ;
+;  hex0[4]  ; debounce_flip_flip ; 7.051 ; 7.051 ; Rise       ; debounce_flip_flip ;
+;  hex0[5]  ; debounce_flip_flip ; 7.024 ; 7.024 ; Rise       ; debounce_flip_flip ;
+;  hex0[6]  ; debounce_flip_flip ; 7.056 ; 7.056 ; Rise       ; debounce_flip_flip ;
+; hex1[*]   ; start              ; 8.073 ; 8.073 ; Rise       ; start              ;
+;  hex1[0]  ; start              ; 8.056 ; 8.056 ; Rise       ; start              ;
+;  hex1[1]  ; start              ; 7.685 ; 7.685 ; Rise       ; start              ;
+;  hex1[2]  ; start              ; 7.690 ; 7.690 ; Rise       ; start              ;
+;  hex1[3]  ; start              ; 7.699 ; 7.699 ; Rise       ; start              ;
+;  hex1[4]  ; start              ; 7.711 ; 7.711 ; Rise       ; start              ;
+;  hex1[5]  ; start              ; 8.073 ; 8.073 ; Rise       ; start              ;
+;  hex1[6]  ; start              ; 8.068 ; 8.068 ; Rise       ; start              ;
++-----------+--------------------+-------+-------+------------+--------------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise  ; Fall  ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; hex0[*]   ; debounce_flip_flip ; 6.614 ; 6.614 ; Rise       ; debounce_flip_flip ;
+;  hex0[0]  ; debounce_flip_flip ; 6.922 ; 6.922 ; Rise       ; debounce_flip_flip ;
+;  hex0[1]  ; debounce_flip_flip ; 6.955 ; 6.955 ; Rise       ; debounce_flip_flip ;
+;  hex0[2]  ; debounce_flip_flip ; 6.838 ; 6.838 ; Rise       ; debounce_flip_flip ;
+;  hex0[3]  ; debounce_flip_flip ; 6.946 ; 6.946 ; Rise       ; debounce_flip_flip ;
+;  hex0[4]  ; debounce_flip_flip ; 6.618 ; 6.618 ; Rise       ; debounce_flip_flip ;
+;  hex0[5]  ; debounce_flip_flip ; 6.619 ; 6.619 ; Rise       ; debounce_flip_flip ;
+;  hex0[6]  ; debounce_flip_flip ; 6.614 ; 6.614 ; Rise       ; debounce_flip_flip ;
+; hex1[*]   ; start              ; 7.046 ; 7.046 ; Rise       ; start              ;
+;  hex1[0]  ; start              ; 7.422 ; 7.422 ; Rise       ; start              ;
+;  hex1[1]  ; start              ; 7.046 ; 7.046 ; Rise       ; start              ;
+;  hex1[2]  ; start              ; 7.052 ; 7.052 ; Rise       ; start              ;
+;  hex1[3]  ; start              ; 7.062 ; 7.062 ; Rise       ; start              ;
+;  hex1[4]  ; start              ; 7.074 ; 7.074 ; Rise       ; start              ;
+;  hex1[5]  ; start              ; 7.436 ; 7.436 ; Rise       ; start              ;
+;  hex1[6]  ; start              ; 7.431 ; 7.431 ; Rise       ; start              ;
++-----------+--------------------+-------+-------+------------+--------------------+
+
+
++--------------------------------------------+
+; Fast Model Setup Summary                   ;
++--------------------+-------+---------------+
+; Clock              ; Slack ; End Point TNS ;
++--------------------+-------+---------------+
+; debounce_flip_flip ; 0.297 ; 0.000         ;
+; start              ; 0.317 ; 0.000         ;
+; clock              ; 0.641 ; 0.000         ;
++--------------------+-------+---------------+
+
+
++---------------------------------------------+
+; Fast Model Hold Summary                     ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; clock              ; -0.524 ; -0.524        ;
+; start              ; 0.262  ; 0.000         ;
+; debounce_flip_flip ; 0.375  ; 0.000         ;
++--------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++---------------------------------------------+
+; Fast Model Minimum Pulse Width Summary      ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; start              ; -1.380 ; -5.380        ;
+; clock              ; -1.380 ; -4.380        ;
+; debounce_flip_flip ; -0.500 ; -4.000        ;
++--------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'debounce_flip_flip'                                                                                                                                                                             ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                    ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; 0.297 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.735      ;
+; 0.310 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.722      ;
+; 0.332 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.700      ;
+; 0.345 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.687      ;
+; 0.354 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.678      ;
+; 0.367 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.665      ;
+; 0.485 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.547      ;
+; 0.491 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.541      ;
+; 0.494 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.538      ;
+; 0.505 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; debounce_flip_flip ; debounce_flip_flip ; 1.000        ; 0.000      ; 0.527      ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'start'                                                                                                                                                                                                 ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                            ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.317 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 0.715      ;
+; 0.352 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 1.000        ; 0.000      ; 0.680      ;
+; 0.352 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 0.680      ;
+; 0.358 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 0.674      ;
+; 0.387 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 1.000        ; 0.000      ; 0.645      ;
+; 0.387 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 1.000        ; 0.000      ; 0.645      ;
+; 0.496 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 1.000        ; 0.000      ; 0.536      ;
+; 0.525 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; start        ; start       ; 1.000        ; 0.000      ; 0.507      ;
+; 0.525 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 1.000        ; 0.000      ; 0.507      ;
+; 0.618 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 1.000        ; 0.000      ; 0.414      ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                      ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 0.641 ; toggle_ff_1 ; toggle_ff_2        ; clock        ; clock       ; 1.000        ; 0.000      ; 0.391      ;
+; 0.641 ; toggle_ff_2 ; debounce_flip_flip ; clock        ; clock       ; 1.000        ; 0.000      ; 0.391      ;
+; 0.904 ; start       ; toggle_ff_1        ; start        ; clock       ; 0.500        ; 1.804      ; 1.432      ;
+; 1.404 ; start       ; toggle_ff_1        ; start        ; clock       ; 1.000        ; 1.804      ; 1.432      ;
++-------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                        ;
++--------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -0.524 ; start       ; toggle_ff_1        ; start        ; clock       ; 0.000        ; 1.804      ; 1.432      ;
+; -0.024 ; start       ; toggle_ff_1        ; start        ; clock       ; -0.500       ; 1.804      ; 1.432      ;
+; 0.239  ; toggle_ff_1 ; toggle_ff_2        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239  ; toggle_ff_2 ; debounce_flip_flip ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
++--------+-------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'start'                                                                                                                                                                                                  ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                            ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.262 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 0.414      ;
+; 0.355 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; start        ; start       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.384 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 0.000        ; 0.000      ; 0.536      ;
+; 0.493 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; start        ; start       ; 0.000        ; 0.000      ; 0.645      ;
+; 0.493 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 0.000        ; 0.000      ; 0.645      ;
+; 0.522 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 0.674      ;
+; 0.528 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ; start        ; start       ; 0.000        ; 0.000      ; 0.680      ;
+; 0.528 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 0.680      ;
+; 0.563 ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ; start        ; start       ; 0.000        ; 0.000      ; 0.715      ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'debounce_flip_flip'                                                                                                                                                                              ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                    ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; 0.375 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.527      ;
+; 0.386 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.538      ;
+; 0.389 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.541      ;
+; 0.395 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.547      ;
+; 0.513 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.665      ;
+; 0.526 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.678      ;
+; 0.535 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.687      ;
+; 0.548 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.700      ;
+; 0.570 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.722      ;
+; 0.583 ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ; debounce_flip_flip ; debounce_flip_flip ; 0.000        ; 0.000      ; 0.735      ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'start'                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; start ; Rise       ; start                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; start ; Rise       ; lpm_counter:test_counter_unbounced|cntr_okh:auto_generated|safe_q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; start|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; start|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; start~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; start~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; start~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; start~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; start ; Rise       ; test_counter_unbounced|auto_generated|counter_reg_bit1a[3]|clk       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; debounce_flip_flip     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; debounce_flip_flip     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; toggle_ff_1            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_1            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; toggle_ff_2            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_2            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; debounce_flip_flip|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; debounce_flip_flip|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; toggle_ff_1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; toggle_ff_2|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; toggle_ff_2|clk        ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'debounce_flip_flip'                                                                                                     ;
++--------+--------------+----------------+------------------+--------------------+------------+------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock              ; Clock Edge ; Target                                                     ;
++--------+--------------+----------------+------------------+--------------------+------------+------------------------------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; lpm_counter:test_counter|cntr_okh:auto_generated|safe_q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; debounce_flip_flip|regout                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; debounce_flip_flip|regout                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|inclk[0]                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|inclk[0]                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|outclk                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; debounce_flip_flip~clkctrl|outclk                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce_flip_flip ; Rise       ; test_counter|auto_generated|counter_reg_bit1a[3]|clk       ;
++--------+--------------+----------------+------------------+--------------------+------------+------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; start     ; clock      ; -0.404 ; -0.404 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; start     ; clock      ; 0.524 ; 0.524 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise  ; Fall  ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; hex0[*]   ; debounce_flip_flip ; 3.783 ; 3.783 ; Rise       ; debounce_flip_flip ;
+;  hex0[0]  ; debounce_flip_flip ; 3.749 ; 3.749 ; Rise       ; debounce_flip_flip ;
+;  hex0[1]  ; debounce_flip_flip ; 3.783 ; 3.783 ; Rise       ; debounce_flip_flip ;
+;  hex0[2]  ; debounce_flip_flip ; 3.725 ; 3.725 ; Rise       ; debounce_flip_flip ;
+;  hex0[3]  ; debounce_flip_flip ; 3.771 ; 3.771 ; Rise       ; debounce_flip_flip ;
+;  hex0[4]  ; debounce_flip_flip ; 3.655 ; 3.655 ; Rise       ; debounce_flip_flip ;
+;  hex0[5]  ; debounce_flip_flip ; 3.656 ; 3.656 ; Rise       ; debounce_flip_flip ;
+;  hex0[6]  ; debounce_flip_flip ; 3.654 ; 3.654 ; Rise       ; debounce_flip_flip ;
+; hex1[*]   ; start              ; 4.165 ; 4.165 ; Rise       ; start              ;
+;  hex1[0]  ; start              ; 4.153 ; 4.153 ; Rise       ; start              ;
+;  hex1[1]  ; start              ; 3.984 ; 3.984 ; Rise       ; start              ;
+;  hex1[2]  ; start              ; 3.988 ; 3.988 ; Rise       ; start              ;
+;  hex1[3]  ; start              ; 3.998 ; 3.998 ; Rise       ; start              ;
+;  hex1[4]  ; start              ; 4.017 ; 4.017 ; Rise       ; start              ;
+;  hex1[5]  ; start              ; 4.165 ; 4.165 ; Rise       ; start              ;
+;  hex1[6]  ; start              ; 4.154 ; 4.154 ; Rise       ; start              ;
++-----------+--------------------+-------+-------+------------+--------------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise  ; Fall  ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; hex0[*]   ; debounce_flip_flip ; 3.503 ; 3.503 ; Rise       ; debounce_flip_flip ;
+;  hex0[0]  ; debounce_flip_flip ; 3.597 ; 3.597 ; Rise       ; debounce_flip_flip ;
+;  hex0[1]  ; debounce_flip_flip ; 3.629 ; 3.629 ; Rise       ; debounce_flip_flip ;
+;  hex0[2]  ; debounce_flip_flip ; 3.573 ; 3.573 ; Rise       ; debounce_flip_flip ;
+;  hex0[3]  ; debounce_flip_flip ; 3.620 ; 3.620 ; Rise       ; debounce_flip_flip ;
+;  hex0[4]  ; debounce_flip_flip ; 3.504 ; 3.504 ; Rise       ; debounce_flip_flip ;
+;  hex0[5]  ; debounce_flip_flip ; 3.505 ; 3.505 ; Rise       ; debounce_flip_flip ;
+;  hex0[6]  ; debounce_flip_flip ; 3.503 ; 3.503 ; Rise       ; debounce_flip_flip ;
+; hex1[*]   ; start              ; 3.764 ; 3.764 ; Rise       ; start              ;
+;  hex1[0]  ; start              ; 3.928 ; 3.928 ; Rise       ; start              ;
+;  hex1[1]  ; start              ; 3.764 ; 3.764 ; Rise       ; start              ;
+;  hex1[2]  ; start              ; 3.769 ; 3.769 ; Rise       ; start              ;
+;  hex1[3]  ; start              ; 3.779 ; 3.779 ; Rise       ; start              ;
+;  hex1[4]  ; start              ; 3.791 ; 3.791 ; Rise       ; start              ;
+;  hex1[5]  ; start              ; 3.939 ; 3.939 ; Rise       ; start              ;
+;  hex1[6]  ; start              ; 3.935 ; 3.935 ; Rise       ; start              ;
++-----------+--------------------+-------+-------+------------+--------------------+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++---------------------+--------+--------+----------+---------+---------------------+
+; Clock               ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++---------------------+--------+--------+----------+---------+---------------------+
+; Worst-case Slack    ; -0.841 ; -0.524 ; N/A      ; N/A     ; -1.631              ;
+;  clock              ; 0.101  ; -0.524 ; N/A      ; N/A     ; -1.631              ;
+;  debounce_flip_flip ; -0.841 ; 0.375  ; N/A      ; N/A     ; -0.611              ;
+;  start              ; -0.808 ; 0.262  ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS     ; -4.932 ; -0.524 ; 0.0      ; 0.0     ; -16.704             ;
+;  clock              ; 0.000  ; -0.524 ; N/A      ; N/A     ; -5.297              ;
+;  debounce_flip_flip ; -2.532 ; 0.000  ; N/A      ; N/A     ; -4.888              ;
+;  start              ; -2.400 ; 0.000  ; N/A      ; N/A     ; -6.519              ;
++---------------------+--------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; start     ; clock      ; 0.399 ; 0.399 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; start     ; clock      ; 0.524 ; 0.524 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise  ; Fall  ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; hex0[*]   ; debounce_flip_flip ; 7.393 ; 7.393 ; Rise       ; debounce_flip_flip ;
+;  hex0[0]  ; debounce_flip_flip ; 7.357 ; 7.357 ; Rise       ; debounce_flip_flip ;
+;  hex0[1]  ; debounce_flip_flip ; 7.393 ; 7.393 ; Rise       ; debounce_flip_flip ;
+;  hex0[2]  ; debounce_flip_flip ; 7.279 ; 7.279 ; Rise       ; debounce_flip_flip ;
+;  hex0[3]  ; debounce_flip_flip ; 7.382 ; 7.382 ; Rise       ; debounce_flip_flip ;
+;  hex0[4]  ; debounce_flip_flip ; 7.051 ; 7.051 ; Rise       ; debounce_flip_flip ;
+;  hex0[5]  ; debounce_flip_flip ; 7.024 ; 7.024 ; Rise       ; debounce_flip_flip ;
+;  hex0[6]  ; debounce_flip_flip ; 7.056 ; 7.056 ; Rise       ; debounce_flip_flip ;
+; hex1[*]   ; start              ; 8.073 ; 8.073 ; Rise       ; start              ;
+;  hex1[0]  ; start              ; 8.056 ; 8.056 ; Rise       ; start              ;
+;  hex1[1]  ; start              ; 7.685 ; 7.685 ; Rise       ; start              ;
+;  hex1[2]  ; start              ; 7.690 ; 7.690 ; Rise       ; start              ;
+;  hex1[3]  ; start              ; 7.699 ; 7.699 ; Rise       ; start              ;
+;  hex1[4]  ; start              ; 7.711 ; 7.711 ; Rise       ; start              ;
+;  hex1[5]  ; start              ; 8.073 ; 8.073 ; Rise       ; start              ;
+;  hex1[6]  ; start              ; 8.068 ; 8.068 ; Rise       ; start              ;
++-----------+--------------------+-------+-------+------------+--------------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; Data Port ; Clock Port         ; Rise  ; Fall  ; Clock Edge ; Clock Reference    ;
++-----------+--------------------+-------+-------+------------+--------------------+
+; hex0[*]   ; debounce_flip_flip ; 3.503 ; 3.503 ; Rise       ; debounce_flip_flip ;
+;  hex0[0]  ; debounce_flip_flip ; 3.597 ; 3.597 ; Rise       ; debounce_flip_flip ;
+;  hex0[1]  ; debounce_flip_flip ; 3.629 ; 3.629 ; Rise       ; debounce_flip_flip ;
+;  hex0[2]  ; debounce_flip_flip ; 3.573 ; 3.573 ; Rise       ; debounce_flip_flip ;
+;  hex0[3]  ; debounce_flip_flip ; 3.620 ; 3.620 ; Rise       ; debounce_flip_flip ;
+;  hex0[4]  ; debounce_flip_flip ; 3.504 ; 3.504 ; Rise       ; debounce_flip_flip ;
+;  hex0[5]  ; debounce_flip_flip ; 3.505 ; 3.505 ; Rise       ; debounce_flip_flip ;
+;  hex0[6]  ; debounce_flip_flip ; 3.503 ; 3.503 ; Rise       ; debounce_flip_flip ;
+; hex1[*]   ; start              ; 3.764 ; 3.764 ; Rise       ; start              ;
+;  hex1[0]  ; start              ; 3.928 ; 3.928 ; Rise       ; start              ;
+;  hex1[1]  ; start              ; 3.764 ; 3.764 ; Rise       ; start              ;
+;  hex1[2]  ; start              ; 3.769 ; 3.769 ; Rise       ; start              ;
+;  hex1[3]  ; start              ; 3.779 ; 3.779 ; Rise       ; start              ;
+;  hex1[4]  ; start              ; 3.791 ; 3.791 ; Rise       ; start              ;
+;  hex1[5]  ; start              ; 3.939 ; 3.939 ; Rise       ; start              ;
+;  hex1[6]  ; start              ; 3.935 ; 3.935 ; Rise       ; start              ;
++-----------+--------------------+-------+-------+------------+--------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Setup Transfers                                                                     ;
++--------------------+--------------------+----------+----------+----------+----------+
+; From Clock         ; To Clock           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------+--------------------+----------+----------+----------+----------+
+; clock              ; clock              ; 2        ; 0        ; 0        ; 0        ;
+; start              ; clock              ; 1        ; 1        ; 0        ; 0        ;
+; debounce_flip_flip ; debounce_flip_flip ; 10       ; 0        ; 0        ; 0        ;
+; start              ; start              ; 10       ; 0        ; 0        ; 0        ;
++--------------------+--------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------+
+; Hold Transfers                                                                      ;
++--------------------+--------------------+----------+----------+----------+----------+
+; From Clock         ; To Clock           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------+--------------------+----------+----------+----------+----------+
+; clock              ; clock              ; 2        ; 0        ; 0        ; 0        ;
+; start              ; clock              ; 1        ; 1        ; 0        ; 0        ;
+; debounce_flip_flip ; debounce_flip_flip ; 10       ; 0        ; 0        ; 0        ;
+; start              ; start              ; 10       ; 0        ; 0        ; 0        ;
++--------------------+--------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 14    ; 14   ;
+; Unconstrained Output Port Paths ; 56    ; 56   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jan 18 17:12:58 2017
+Info: Command: quartus_sta debouncer -c debouncer
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'debouncer.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name debounce_flip_flip debounce_flip_flip
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name start start
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.841
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.841        -2.532 debounce_flip_flip 
+    Info (332119):    -0.808        -2.400 start 
+    Info (332119):     0.101         0.000 clock 
+Info (332146): Worst-case hold slack is 0.151
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.151         0.000 clock 
+    Info (332119):     0.664         0.000 start 
+    Info (332119):     1.001         0.000 debounce_flip_flip 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631        -6.519 start 
+    Info (332119):    -1.631        -5.297 clock 
+    Info (332119):    -0.611        -4.888 debounce_flip_flip 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.297
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.297         0.000 debounce_flip_flip 
+    Info (332119):     0.317         0.000 start 
+    Info (332119):     0.641         0.000 clock 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -0.524
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.524        -0.524 clock 
+    Info (332119):     0.262         0.000 start 
+    Info (332119):     0.375         0.000 debounce_flip_flip 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -5.380 start 
+    Info (332119):    -1.380        -4.380 clock 
+    Info (332119):    -0.500        -4.000 debounce_flip_flip 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 295 megabytes
+    Info: Processing ended: Wed Jan 18 17:12:59 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

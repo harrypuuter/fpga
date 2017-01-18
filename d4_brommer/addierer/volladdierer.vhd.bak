@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity volladdierer is
+port(
+	input: in std_logic_vector(1 downto 0);
+	carryin: in std_logic;
+	output: out std_logic;
+	carryout: out std_logic;
+	);
+end;
+
+architecture behave of volladdierer is
+begin
+	output <= input(1) XOR input(0)	XOR carryin
+	carryout <= carryin AND (input(1) XOR input(0)) OR (input(1 AND input(0))
+
+end;

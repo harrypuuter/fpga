@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'debounce_flip_flip'
+Slack : -0.841
+TNS   : -2.532
+
+Type  : Slow Model Setup 'start'
+Slack : -0.808
+TNS   : -2.400
+
+Type  : Slow Model Setup 'clock'
+Slack : 0.101
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clock'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Slow Model Hold 'start'
+Slack : 0.664
+TNS   : 0.000
+
+Type  : Slow Model Hold 'debounce_flip_flip'
+Slack : 1.001
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'start'
+Slack : -1.631
+TNS   : -6.519
+
+Type  : Slow Model Minimum Pulse Width 'clock'
+Slack : -1.631
+TNS   : -5.297
+
+Type  : Slow Model Minimum Pulse Width 'debounce_flip_flip'
+Slack : -0.611
+TNS   : -4.888
+
+Type  : Fast Model Setup 'debounce_flip_flip'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Fast Model Setup 'start'
+Slack : 0.317
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clock'
+Slack : 0.641
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock'
+Slack : -0.524
+TNS   : -0.524
+
+Type  : Fast Model Hold 'start'
+Slack : 0.262
+TNS   : 0.000
+
+Type  : Fast Model Hold 'debounce_flip_flip'
+Slack : 0.375
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'start'
+Slack : -1.380
+TNS   : -5.380
+
+Type  : Fast Model Minimum Pulse Width 'clock'
+Slack : -1.380
+TNS   : -4.380
+
+Type  : Fast Model Minimum Pulse Width 'debounce_flip_flip'
+Slack : -0.500
+TNS   : -4.000
+
+------------------------------------------------------------
