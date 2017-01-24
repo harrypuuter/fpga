@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'teiler:clock|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]'
+Slack : -3.305
+TNS   : -54.713
+
+Type  : Slow Model Setup 'clk'
+Slack : -1.041
+TNS   : -3.476
+
+Type  : Slow Model Setup 'teiler:clock|toggler'
+Slack : -0.031
+TNS   : -0.031
+
+Type  : Slow Model Setup 'teiler:clock|lpm_counter:counter12|cntr_hpj:auto_generated|safe_q[0]'
+Slack : 2.624
+TNS   : 0.000
+
+Type  : Slow Model Hold 'teiler:clock|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]'
+Slack : -2.577
+TNS   : -29.000
+
+Type  : Slow Model Hold 'teiler:clock|lpm_counter:counter12|cntr_hpj:auto_generated|safe_q[0]'
+Slack : -2.372
+TNS   : -2.372
+
+Type  : Slow Model Hold 'clk'
+Slack : -1.959
+TNS   : -8.710
+
+Type  : Slow Model Hold 'teiler:clock|toggler'
+Slack : 0.621
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.631
+TNS   : -8.963
+
+Type  : Slow Model Minimum Pulse Width 'teiler:clock|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.611
+TNS   : -21.996
+
+Type  : Slow Model Minimum Pulse Width 'teiler:clock|toggler'
+Slack : -0.611
+TNS   : -7.332
+
+Type  : Slow Model Minimum Pulse Width 'teiler:clock|lpm_counter:counter12|cntr_hpj:auto_generated|safe_q[0]'
+Slack : -0.611
+TNS   : -1.222
+
+Type  : Fast Model Setup 'teiler:clock|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.715
+TNS   : -11.180
+
+Type  : Fast Model Setup 'clk'
+Slack : 0.212
+TNS   : 0.000
+
+Type  : Fast Model Setup 'teiler:clock|toggler'
+Slack : 0.582
+TNS   : 0.000
+
+Type  : Fast Model Setup 'teiler:clock|lpm_counter:counter12|cntr_hpj:auto_generated|safe_q[0]'
+Slack : 1.457
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.135
+TNS   : -5.701
+
+Type  : Fast Model Hold 'teiler:clock|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]'
+Slack : -1.092
+TNS   : -12.604
+
+Type  : Fast Model Hold 'teiler:clock|lpm_counter:counter12|cntr_hpj:auto_generated|safe_q[0]'
+Slack : -1.077
+TNS   : -1.077
+
+Type  : Fast Model Hold 'teiler:clock|toggler'
+Slack : 0.239
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -7.380
+
+Type  : Fast Model Minimum Pulse Width 'teiler:clock|lpm_counter:counter6|cntr_4vh:auto_generated|counter_reg_bit1a[0]'
+Slack : -0.500
+TNS   : -18.000
+
+Type  : Fast Model Minimum Pulse Width 'teiler:clock|toggler'
+Slack : -0.500
+TNS   : -6.000
+
+Type  : Fast Model Minimum Pulse Width 'teiler:clock|lpm_counter:counter12|cntr_hpj:auto_generated|safe_q[0]'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------
