@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 CHIP  "ampel"  ASSIGNED TO AN: EP2C20F484C7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -173,9 +173,9 @@ GND*                         : C14       :        :                   :         
 GND                          : C15       : gnd    :                   :         :           :                
 GND*                         : C16       :        :                   :         : 4         :                
 GND*                         : C17       :        :                   :         : 4         :                
-light3[2]                    : C18       : output : 3.3-V LVTTL       :         : 4         : Y              
+light3[0]                    : C18       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : C19       :        :                   :         : 5         :                
-light2[2]                    : C20       : output : 3.3-V LVTTL       :         : 5         : Y              
+light2[0]                    : C20       : output : 3.3-V LVTTL       :         : 5         : Y              
 GND*                         : C21       :        :                   :         : 5         :                
 GND*                         : C22       :        :                   :         : 5         :                
 GND*                         : D1        :        :                   :         : 2         :                
@@ -191,7 +191,7 @@ GND                          : D10       : gnd    :                   :         
 GND*                         : D11       :        :                   :         : 3         :                
 GND+                         : D12       :        :                   :         : 3         :                
 GND                          : D13       : gnd    :                   :         :           :                
-light3[0]                    : D14       : output : 3.3-V LVTTL       :         : 4         : Y              
+light3[2]                    : D14       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : D15       :        :                   :         : 4         :                
 light3[1]                    : D16       : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : D17       : power  :                   : 3.3V    : 4         :                
@@ -213,8 +213,8 @@ VCCIO3                       : E10       : power  :                   : 3.3V    
 GND*                         : E11       :        :                   :         : 3         :                
 GND+                         : E12       :        :                   :         : 3         :                
 VCCIO4                       : E13       : power  :                   : 3.3V    : 4         :                
-light1[0]                    : E14       : output : 3.3-V LVTTL       :         : 4         : Y              
-light0[0]                    : E15       : output : 3.3-V LVTTL       :         : 4         : Y              
+light1[2]                    : E14       : output : 3.3-V LVTTL       :         : 4         : Y              
+light0[2]                    : E15       : output : 3.3-V LVTTL       :         : 4         : Y              
 GNDA_PLL2                    : E16       : gnd    :                   :         :           :                
 GND_PLL2                     : E17       : gnd    :                   :         :           :                
 GND*                         : E18       :        :                   :         : 5         :                
@@ -241,7 +241,7 @@ VCCA_PLL2                    : F16       : power  :                   : 1.2V    
 VCCD_PLL2                    : F17       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : F18       : gnd    :                   :         :           :                
 GND                          : F19       : gnd    :                   :         :           :                
-light2[0]                    : F20       : output : 3.3-V LVTTL       :         : 5         : Y              
+light2[2]                    : F20       : output : 3.3-V LVTTL       :         : 5         : Y              
 GND*                         : F21       :        :                   :         : 5         :                
 GND*                         : F22       :        :                   :         : 5         :                
 NC                           : G1        :        :                   :         :           :                
@@ -277,8 +277,8 @@ GND*                         : H8        :        :                   :         
 GND*                         : H9        :        :                   :         : 3         :                
 GND*                         : H10       :        :                   :         : 3         :                
 GND*                         : H11       :        :                   :         : 3         :                
-light1[2]                    : H12       : output : 3.3-V LVTTL       :         : 4         : Y              
-light0[2]                    : H13       : output : 3.3-V LVTTL       :         : 4         : Y              
+light1[0]                    : H12       : output : 3.3-V LVTTL       :         : 4         : Y              
+light0[0]                    : H13       : output : 3.3-V LVTTL       :         : 4         : Y              
 light1[1]                    : H14       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : H15       :        :                   :         : 4         :                
 GND*                         : H16       :        :                   :         : 5         :                

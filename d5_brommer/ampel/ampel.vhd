@@ -30,12 +30,11 @@ port (state :in integer range 0 to 3;
   );
 end component;
 
-type state_type is (s0,s1,s2,s3,s4,s5);  --type of state machine.
+type state_type is (s0,s05,s1,s2,s3,s35,s4,s5);  --type of state machine.
 signal current_state,next_state: state_type;  --current and next state declaration.
 type LIGHT_DATA is array (3 downto 0) of integer range 0 to 3;
 signal light: LIGHT_DATA;
 signal slow_clock: std_logic;
-
 begin
 
 ampel0: lamp port map(state => light(0), light => light0); 
@@ -57,6 +56,9 @@ begin
   case current_state is
 			when s0 =>		--state "s0"
 				light <= (0,2,0,2);
+				next_state <= s05;
+			when s05 =>		--state "s0.5"
+				light <= (0,2,0,2);
 				next_state <= s1;
 			when s1 =>		--state "s1"
 				light <= (0,3,0,3);
@@ -65,6 +67,9 @@ begin
 				light <= (1,0,1,0);
 				next_state <= s3;
 			when s3 =>		--state "s3"
+				light <= (2,0,2,0);
+				next_state <= s35;
+			when s35 =>		--state "s3.5"
 				light <= (2,0,2,0);
 				next_state <= s4;
 			when s4 =>		--state "s4"

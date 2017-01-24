@@ -44,13 +44,13 @@ end component;
 signal cout: STD_LOGIC;
 signal reset: STD_LOGIC;
 signal toggle: STD_LOGIC;
-signal q_counter12	: STD_LOGIC_VECTOR (17 DOWNTO 0);
+signal q_counter12	: STD_LOGIC_VECTOR (18 DOWNTO 0);
 
 
 begin
 
 counter6:  lpm_counter generic map (lpm_width => 6,  lpm_direction=>"UP") port map(clock => clock, cout => cout);
-counter12: lpm_counter generic map (lpm_width => 18, lpm_direction=>"DOWN", lpm_svalue=>"99999") port map(clock => cout, q=> q_counter12, sset=> reset);
+counter12: lpm_counter generic map (lpm_width => 19, lpm_direction=>"DOWN", lpm_svalue=>"499999") port map(clock => cout, q=> q_counter12, sset=> reset);
  
 toggler: tff port map(t=> '1', clk => toggle, q=>output); 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="ampel">
-		<CBX_INST_ENTRY INSTANCE_NAME="|ampel|teiler:clock|lpm_counter:counter12" CBX_FILE_NAME="cntr_hpj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ampel|teiler:clock|lpm_counter:counter12" CBX_FILE_NAME="cntr_6rj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|ampel|teiler:clock|lpm_counter:counter6" CBX_FILE_NAME="cntr_4vh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
